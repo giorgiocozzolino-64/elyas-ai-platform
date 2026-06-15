@@ -3,7 +3,7 @@
 import QRCode from "qrcode";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import PrintCertificateButton from "@/app/components/PrintCertificateButton";
-
+export const dynamic = "force-dynamic";
 type CertificatePageProps = {
   params: Promise<{ asset_id: string }>;
 };

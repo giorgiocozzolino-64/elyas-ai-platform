@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 
+export const dynamic = "force-dynamic";
+
 async function getCount(table: string) {
   const { count } = await supabaseAdmin
     .from(table)

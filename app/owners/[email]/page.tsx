@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+export const dynamic = "force-dynamic";
 
 type OwnerPageProps = {
   params: Promise<{

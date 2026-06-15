@@ -1,5 +1,8 @@
+// app/dashboard/page.tsx — v1.5 SAFE DEPLOY — 15/06/2026
+
 import Link from "next/link";
-import { supabaseAdmin } from "@/lib/supabase/admin";
+
+export const dynamic = "force-dynamic";
 
 const integrations = [
   { name: "Oracle NetSuite", status: "CONNECTED" },
@@ -31,205 +34,131 @@ const companyModules = [
   {
     name: "Mc Fratm Ltd",
     href: "/companies/mc-fratm",
-    description: "Food, beverage, technology and certification innovation group.",
-    status: "ACTIVE",
-  },
-];
-
-const registryEvents = [
-  {
-    entity: "Old Tom Gin Company Ltd",
-    event: "Certified Company Active",
-    status: "ACTIVE",
-  },
-  {
-    entity: "Mc Fratm Ltd",
-    event: "Certified Producer & Technology Layer Active",
-    status: "ACTIVE",
-  },
-  {
-    entity: "Arbroath A.D.1320 Ltd",
-    event: "Maison Certification Framework Active",
-    status: "ACTIVE",
-  },
-  {
-    entity: "OF Whisky Atelier Ltd",
-    event: "Whisky Atelier Certification Framework Registered",
+    description: "Premium food, hospitality and lifestyle product producer.",
     status: "REGISTERED",
   },
 ];
 
-async function getCount(table: string) {
-  const { count, error } = await supabaseAdmin
-    .from(table)
-    .select("*", { count: "exact", head: true });
+const productClasses = [
+  {
+    name: "Pinkglow Gin",
+    href: "/portal/old-tom-gin-company/pinkglow-gin",
+    producer: "Old Tom Gin Company Ltd",
+    assets: "250",
+    status: "LIVE",
+  },
+  {
+    name: "Fife Negroni 2026",
+    href: "/companies/old-tom-gin-company/fife-negroni",
+    producer: "Old Tom Gin Company Ltd",
+    assets: "60",
+    status: "ARCHIVE",
+  },
+  {
+    name: "Sea Malt On Primeur",
+    href: "/products",
+    producer: "Arbroath A.D.1320 Ltd",
+    assets: "250 planned",
+    status: "IN DEVELOPMENT",
+  },
+];
 
-  if (error) {
-    console.error(`Error reading ${table}:`, error.message);
-    return 0;
-  }
-
-  return count ?? 0;
-}
-
-async function getCountries() {
-  const { data, error } = await supabaseAdmin
-    .from("pinkglow_page_views")
-    .select("country");
-
-  if (error) {
-    console.error("Error reading countries:", error.message);
-    return [];
-  }
-
-  return data ?? [];
-}
-
-async function getCertificationEvents() {
-  const { data, error } = await supabaseAdmin
-    .from("certification_events")
-    .select("*")
-    .order("created_at", { ascending: false })
-    .limit(8);
-
-  if (error) {
-    console.error("Error reading certification events:", error.message);
-    return [];
-  }
-
-  return data ?? [];
-}
-
-export default async function DashboardPage() {
-  const [assets, owners, scans, ownershipRecords, countries, timelineEvents] =
-    await Promise.all([
-      getCount("pinkglow_bottles"),
-      getCount("pinkglow_claims"),
-      getCount("pinkglow_page_views"),
-      getCount("pinkglow_ownership_history"),
-      getCountries(),
-      getCertificationEvents(),
-    ]);
-
-  const countryCount = (country: string) =>
-    countries.filter((item) => {
-      const value = String(item.country ?? "").toLowerCase();
-
-      if (country === "Germany") {
-        return value.includes("germany") || value.includes("deutschland");
-      }
-
-      if (country === "United Kingdom") {
-        return (
-          value.includes("united kingdom") ||
-          value.includes("uk") ||
-          value.includes("great britain")
-        );
-      }
-
-      return value.includes(country.toLowerCase());
-    }).length;
-
-  const ukCount = countryCount("United Kingdom");
-  const germanyCount = countryCount("Germany");
-  const italyCount = countryCount("Italy");
-  const polandCount = countryCount("Poland");
-  const netherlandsCount = countryCount("Netherlands");
-
-  const metrics = [
-    { title: "Certified Companies", value: "4" },
-    { title: "Certified Product Classes", value: "5" },
-    { title: "Certified Assets", value: String(assets + 60) },
-    { title: "Registered Owners", value: String(owners) },
-    { title: "Scan Events", value: String(scans) },
-    { title: "Certification Events", value: String(timelineEvents.length) },
-  ];
-
+export default function DashboardPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="mx-auto max-w-7xl px-8 py-20">
+    <main className="min-h-screen bg-black px-8 py-20 text-white">
+      <div className="mx-auto max-w-7xl">
         <p className="uppercase tracking-[0.4em] text-pink-400">
-          E.L.Y.A.S-A.I. 2.0
+          E.L.Y.A.S-A.I. Certification Authority
         </p>
 
         <h1 className="mt-6 text-6xl font-bold">
-          Certification Authority Control Centre
+          Certification Dashboard
         </h1>
 
-        <p className="mt-6 max-w-5xl text-xl leading-relaxed text-zinc-400">
-          Live operational dashboard connected to Supabase for certified assets,
-          ownership records, scan intelligence and certification activity.
+        <p className="mt-6 max-w-4xl text-xl leading-relaxed text-zinc-400">
+          Executive control layer for certified product identity, ownership,
+          verification and producer ecosystems.
         </p>
 
-        <div className="mt-12 rounded-3xl border border-pink-300/20 bg-white/5 p-8">
-          <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
-            E.L.Y.A.S-A.I. Data Hierarchy
+        <section className="mt-12 grid gap-6 md:grid-cols-4">
+          <Metric title="Certified Projects" value="5" />
+          <Metric title="Certified Assets" value="310+" />
+          <Metric title="Registered Owners" value="LIVE" />
+          <Metric title="Certification Status" value="ACTIVE" />
+        </section>
+
+        <section className="mt-16 rounded-3xl border border-pink-300/20 bg-white/5 p-8">
+          <p className="uppercase tracking-[0.3em] text-pink-400">
+            Platform Integrations
           </p>
 
-          <div className="mt-6 grid gap-4 text-center md:grid-cols-5">
-            <HierarchyStep title="Company" />
-            <HierarchyStep title="Product Class" />
-            <HierarchyStep title="Asset" />
-            <HierarchyStep title="Owner" />
-            <HierarchyStep title="Certification Event" />
+          <div className="mt-8 grid gap-4 md:grid-cols-5">
+            {integrations.map((integration) => (
+              <div
+                key={integration.name}
+                className="rounded-2xl border border-white/10 bg-black/30 p-5"
+              >
+                <p className="font-bold">{integration.name}</p>
+
+                <p className="mt-3 text-xs uppercase tracking-[0.25em] text-pink-400">
+                  {integration.status}
+                </p>
+              </div>
+            ))}
           </div>
-        </div>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {metrics.map((metric) => (
-            <div
-              key={metric.title}
-              className="rounded-3xl border border-white/10 bg-white/5 p-6"
-            >
-              <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
-                {metric.title}
-              </p>
-
-              <p className="mt-4 text-4xl font-bold text-pink-300">
-                {metric.value}
-              </p>
-            </div>
-          ))}
-        </div>
+        </section>
 
         <section className="mt-16">
           <p className="uppercase tracking-[0.3em] text-pink-400">
-            Certified Company Modules
+            Certified Producers
           </p>
 
-          <h2 className="mt-4 text-4xl font-bold">
-            Products are managed inside each certified company.
-          </h2>
-
-          <p className="mt-4 max-w-5xl text-zinc-400">
-            E.L.Y.A.S-A.I. does not operate as a generic product catalogue. Each
-            product class belongs to a certified company and can generate
-            thousands of certified assets, owner records, transfer history and
-            certification events.
-          </p>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
             {companyModules.map((company) => (
               <Link
                 key={company.name}
                 href={company.href}
-                className="rounded-3xl border border-pink-300/20 bg-white/5 p-8 transition-all duration-300 hover:scale-[1.02] hover:border-pink-300/60 hover:bg-pink-500/10"
+                className="rounded-3xl border border-pink-300/20 bg-white/5 p-8 transition hover:border-pink-400/60 hover:bg-white/10"
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-3xl font-bold">{company.name}</h3>
+                <div className="flex items-start justify-between gap-6">
+                  <h2 className="text-3xl font-bold">{company.name}</h2>
 
-                    <p className="mt-4 text-zinc-400">
-                      {company.description}
-                    </p>
-                  </div>
-
-                  <span className="rounded-full bg-pink-500/20 px-3 py-1 text-xs font-bold tracking-widest text-pink-300">
+                  <span className="rounded-full border border-pink-400/30 bg-pink-500/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-pink-200">
                     {company.status}
                   </span>
                 </div>
 
-                <p className="mt-6 text-pink-300">Open Company Registry →</p>
+                <p className="mt-6 text-zinc-400">{company.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-16">
+          <p className="uppercase tracking-[0.3em] text-pink-400">
+            Product Classes
+          </p>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {productClasses.map((product) => (
+              <Link
+                key={product.name}
+                href={product.href}
+                className="rounded-3xl border border-pink-300/20 bg-white/5 p-8 transition hover:border-pink-400/60 hover:bg-white/10"
+              >
+                <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
+                  {product.producer}
+                </p>
+
+                <h2 className="mt-4 text-3xl font-bold">{product.name}</h2>
+
+                <p className="mt-6 text-pink-300">
+                  {product.assets} Certified Assets
+                </p>
+
+                <p className="mt-4 text-xs uppercase tracking-[0.25em] text-pink-400">
+                  {product.status}
+                </p>
               </Link>
             ))}
           </div>
@@ -237,160 +166,18 @@ export default async function DashboardPage() {
 
         <section className="mt-16 rounded-3xl border border-pink-300/20 bg-white/5 p-8">
           <p className="uppercase tracking-[0.3em] text-pink-400">
-            Live Certification Timeline
+            Quick Access
           </p>
 
-          <h2 className="mt-4 text-3xl font-bold">
-            Every certified product has a story.
-          </h2>
-
-          <div className="mt-8 space-y-6">
-            {timelineEvents.map((event: any) => (
-              <div
-                key={event.id}
-                className="border-l border-pink-300/40 pl-6"
-              >
-                <p className="text-xs uppercase tracking-[0.25em] text-zinc-500">
-                  {new Date(event.created_at).toLocaleString("en-GB")}
-                </p>
-
-                <h3 className="mt-2 text-xl font-bold text-pink-300">
-                  {event.event_type}
-                </h3>
-
-                <p className="mt-2 text-zinc-300">
-                  {event.event_description}
-                </p>
-
-                <p className="mt-2 text-sm text-zinc-500">
-                  {event.company_name}
-                  {event.product_class ? ` · ${event.product_class}` : ""}
-                  {event.asset_serial ? ` · ${event.asset_serial}` : ""}
-                  {event.country ? ` · ${event.country}` : ""}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <div className="mt-16 grid gap-8 lg:grid-cols-2">
-          <section className="rounded-3xl border border-pink-300/20 bg-white/5 p-8">
-            <p className="uppercase tracking-[0.3em] text-pink-400">
-              Certified Company Registry
-            </p>
-
-            <p className="mt-4 text-zinc-400">
-              Active certified organisations and certification frameworks.
-            </p>
-
-            <div className="mt-8 space-y-5">
-              {registryEvents.map((item) => (
-                <div
-                  key={`${item.entity}-${item.event}`}
-                  className="flex items-center justify-between border-b border-white/10 pb-4"
-                >
-                  <div>
-                    <p className="font-semibold">{item.entity}</p>
-                    <p className="text-sm text-zinc-500">{item.event}</p>
-                  </div>
-
-                  <span className="text-sm text-pink-300">{item.status}</span>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="rounded-3xl border border-pink-300/20 bg-white/5 p-8">
-            <p className="uppercase tracking-[0.3em] text-pink-400">
-              ERP & System Status
-            </p>
-
-            <div className="mt-8 space-y-5">
-              {integrations.map((item) => (
-                <div
-                  key={item.name}
-                  className="flex items-center justify-between border-b border-white/10 pb-4"
-                >
-                  <span>{item.name}</span>
-
-                  <span
-                    className={
-                      item.status === "CONNECTED" || item.status === "LIVE"
-                        ? "text-green-400"
-                        : "text-zinc-500"
-                    }
-                  >
-                    {item.status}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
-
-        <div className="mt-16 grid gap-6 md:grid-cols-4">
-          <Link
-            href="/companies"
-            className="rounded-3xl border border-pink-300/20 bg-pink-500/10 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-pink-300/60"
-          >
-            <h2 className="text-2xl font-bold">Companies</h2>
-            <p className="mt-3 text-zinc-400">
-              Certified producers and maisons.
-            </p>
-          </Link>
-
-          <Link
-            href="/assets"
-            className="rounded-3xl border border-pink-300/20 bg-pink-500/10 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-pink-300/60"
-          >
-            <h2 className="text-2xl font-bold">Asset Registry</h2>
-            <p className="mt-3 text-zinc-400">
-              Bottles, casks and certified collections.
-            </p>
-          </Link>
-
-          <Link
-            href="/owners"
-            className="rounded-3xl border border-pink-300/20 bg-pink-500/10 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-pink-300/60"
-          >
-            <h2 className="text-2xl font-bold">Owner Registry</h2>
-            <p className="mt-3 text-zinc-400">
-              Registry and ownership history.
-            </p>
-          </Link>
-
-          <Link
-            href="/verify/PG-FC26-001"
-            className="rounded-3xl border border-pink-300/20 bg-pink-500/10 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-pink-300/60"
-          >
-            <h2 className="text-2xl font-bold">Verify</h2>
-            <p className="mt-3 text-zinc-400">
-              Public certified asset verification.
-            </p>
-          </Link>
-        </div>
-
-        <section className="mt-16 rounded-3xl border border-pink-300/20 bg-white/5 p-8">
-          <p className="uppercase tracking-[0.3em] text-pink-400">
-            Global Intelligence
-          </p>
-
-          <h2 className="mt-4 text-3xl font-bold">
-            Scan intelligence, ownership activity and product lifecycle data.
-          </h2>
-
-          <p className="mt-4 text-zinc-400">
-            Geolocation was activated after the first scan events. Older scans
-            may not include country, city or GPS-level metadata.
-          </p>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-6">
-            <CountryCard label="United Kingdom" value={ukCount} />
-            <CountryCard label="Italy" value={italyCount} />
-            <CountryCard label="Germany" value={germanyCount} />
-            <CountryCard label="Poland" value={polandCount} />
-            <CountryCard label="Netherlands" value={netherlandsCount} />
-            <CountryCard label="Global Scans" value={scans} />
+          <div className="mt-8 flex flex-wrap gap-4">
+            <QuickLink href="/assets" label="Asset Registry" />
+            <QuickLink href="/owners" label="Owner Registry" />
+            <QuickLink href="/products" label="Product Registry" />
+            <QuickLink href="/verify/PG-FC26-001" label="Verify Demo Asset" />
+            <QuickLink
+              href="/certificate/PG-FC26-001"
+              label="Demo Certificate"
+            />
           </div>
         </section>
       </div>
@@ -398,24 +185,25 @@ export default async function DashboardPage() {
   );
 }
 
-function HierarchyStep({ title }: { title: string }) {
+function Metric({ title, value }: { title: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-black/40 p-4">
-      <p className="text-sm uppercase tracking-[0.25em] text-pink-300">
+    <div className="rounded-3xl border border-pink-300/20 bg-white/5 p-8">
+      <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
         {title}
       </p>
+
+      <p className="mt-4 text-3xl font-bold text-pink-300">{value}</p>
     </div>
   );
 }
 
-function CountryCard({ label, value }: { label: string; value: number }) {
+function QuickLink({ href, label }: { href: string; label: string }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-black/40 p-4">
-      <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">
-        {label}
-      </p>
-
-      <p className="mt-3 text-2xl font-bold text-pink-300">{value}</p>
-    </div>
+    <Link
+      href={href}
+      className="rounded-2xl border border-pink-400/40 px-6 py-4 font-bold text-pink-200 hover:bg-white/5"
+    >
+      {label} →
+    </Link>
   );
 }

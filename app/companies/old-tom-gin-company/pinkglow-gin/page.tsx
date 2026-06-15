@@ -1,5 +1,7 @@
+    export const dynamic = "force-dynamic";
 export default function PinkglowGinPage() {
   return (
+
     <main className="min-h-screen bg-black text-white">
       <div className="mx-auto max-w-7xl px-8 py-20">
         <p className="uppercase tracking-[0.4em] text-pink-400">
