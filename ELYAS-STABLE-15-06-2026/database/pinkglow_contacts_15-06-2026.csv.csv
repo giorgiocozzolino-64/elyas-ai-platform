@@ -1,0 +1,9 @@
+id,owner_name,owner_email,first_serial,last_serial,marketing_consent,source,created_at,updated_at,company,lead_score
+00da848c-e2df-428b-ab42-380ba4d57243,Krzysztof Janowski,jamnik05011985@gmail.com,PG-FC26-190,PG-FC26-190,false,pinkglow_claim,2026-06-06 11:52:55.098275+00,2026-06-06 11:52:55.098275+00,Diageo,10
+0bfbd04b-eb2f-4e36-b608-768f205bf77d,Hayden Gordon,hayden.gordon@outlook.com,PG-FC26-099,PG-FC26-099,true,pinkglow_claim,2026-06-06 11:52:55.098275+00,2026-06-06 11:52:55.098275+00,Fife Council,7
+25c02835-f058-46fd-801a-15ef2741d56a,Megan McLean,meg_robertson@diageo.co.uk,PG-FC26-157,PG-FC26-157,true,pinkglow_claim,2026-06-06 11:52:55.098275+00,2026-06-06 11:52:55.098275+00,Diageo,10
+47d1595d-f9ff-422a-afdc-d1dce0859351,George Johnston,george.johnston83@yahoo.com,PG-FC26-073,PG-FC26-073,true,pinkglow_claim,2026-06-06 11:52:55.098275+00,2026-06-06 11:52:55.098275+00,"Old course hotel ",8
+7eced5c6-39d2-4159-ada5-0f350de96aa6,"Demi Philp ",philpdemi06@gmail.com,PG-FC26-212,PG-FC26-212,false,pinkglow_claim,2026-06-06 11:52:55.098275+00,2026-06-06 11:52:55.098275+00,Fife Council,7
+7f862339-9bdc-48a8-854f-0a86f10f1e7e,"Laura Mihailov ",innovation2all@gmail.com,PG-FC26-051,PG-FC26-051,false,pinkglow_claim,2026-06-06 11:52:55.098275+00,2026-06-06 11:52:55.098275+00,Fslt,1
+a8d49ff5-8b41-45d1-a959-de6f90f197aa,Janette Napier,janette_napier@yahoo.co.uk,PG-FC26-114,PG-FC26-114,true,pinkglow_claim,2026-06-06 11:52:55.098275+00,2026-06-06 11:52:55.098275+00,Fairmont St Andrews,8
+c162c4af-91f0-48c7-84b6-316b5ab59356,Ayesha Nickson,ayeshanickson@gmail.com,PG-FC26-126,PG-FC26-126,true,pinkglow_claim,2026-06-06 11:52:55.098275+00,2026-06-06 11:52:55.098275+00,Fairmont St Andrews,8

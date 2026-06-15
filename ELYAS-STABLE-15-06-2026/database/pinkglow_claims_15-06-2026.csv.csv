@@ -1,0 +1,13 @@
+id,bottle_id,serial,owner_name,owner_email,owner_message,claimed_at,marketing_consent
+0328cb7b-4d39-40cc-a11b-308af1515d43,04b072ed-bebd-4873-994c-2580d9056497,PG-FC26-190,Krzysztof Janowski,jamnik05011985@gmail.com,Diageo,2026-06-05 20:41:22.747066+00,false
+118ad1a8-9594-4769-a932-e9927c482b19,ea578db4-bb09-4b62-964c-5ec6fcb3d9b3,PG-FC26-212,"Demi Philp ",philpdemi06@gmail.com,Fife Council,2026-06-06 11:17:08.196789+00,false
+2a51f2c1-1a85-4970-a7f7-52ed76c42726,a12544c2-13a1-45f8-8528-9fb4e7deaa5d,PG-FC26-114,Janette Napier,janette_napier@yahoo.co.uk,Fairmont St Andrews,2026-06-05 18:10:31.887883+00,true
+2dd4f32c-6612-408a-8fb8-bd87376c27a1,789e7b00-cbc9-4c12-99c7-ab7a4f76e982,PG-FC26-087,Dawn Watson,dawnkellywatson@yahoo.co.uk,Fife Chamber,2026-06-06 22:53:55.873056+00,true
+33b19bc3-e1de-4368-b217-74244f375654,10c156d2-9931-4790-8995-9f96c106cb2d,PG-FC26-073,George Johnston,george.johnston83@yahoo.com,"Old course hotel ",2026-06-05 20:11:03.676723+00,true
+3527c80c-7d23-438f-86f0-70da1982c5ca,06fb896c-a528-4e13-815f-052408ffd60e,PG-FC26-001,Giorgio Cozzolino,giorgio.cozzolino@oldtomgin1821.com,,2026-06-15 08:25:48.99649+00,false
+69c9c4b1-c9e9-4024-91a6-252112d451d4,55dc3cfb-986b-4f2d-bca6-832e8a9141e4,PG-FC26-126,Ayesha Nickson,ayeshanickson@gmail.com,Fairmont St Andrews,2026-06-05 18:07:03.446359+00,true
+819e24bb-6c5b-4fbf-a072-dd1bc611e0fe,b48205af-d848-4fd7-a078-d133a93f9615,PG-FC26-099,Hayden Gordon,hayden.gordon@outlook.com,Fife Council,2026-06-05 18:02:48.279355+00,true
+8eed5df8-3dc1-47d9-aa48-bb6753c3351b,64821910-b878-486a-bb61-9eca01a6f552,PG-FC26-051,"Laura Mihailov ",innovation2all@gmail.com,Fslt,2026-06-05 20:53:23.608388+00,false
+bf8ab692-5099-4110-93ba-cca7f324600f,d9c1839b-49d3-4583-809a-b5dffb273f37,PG-FC26-157,Megan McLean,meg_robertson@diageo.co.uk,Diageo,2026-06-05 20:39:11.135047+00,true
+debaf694-0f0f-435e-92c2-58000daaf201,6e69bf8c-3e1e-48c5-8842-be762d40c79f,PG-FC26-249,Gino Cozzolino,giorgio.cozzolino@libero.it,Afrodysia Srl,2026-06-15 07:02:18.995132+00,true
+f57ea082-4e07-44c9-beea-608b3a733284,38a28091-e395-4353-96ff-5cab042e0547,PG-FC26-162,Erena,weeerena@yahoo.co.uk,"Old course ",2026-06-07 12:32:25.433128+00,true

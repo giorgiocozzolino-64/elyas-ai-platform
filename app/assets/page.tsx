@@ -1,4 +1,4 @@
-// app/assets/page.tsx — v1.5 SAFE DEPLOY — 15/06/2026
+// app/assets/page.tsx — v1.6 CLEAN — 15/06/2026
 
 import Link from "next/link";
 
@@ -26,7 +26,7 @@ export default function AssetsPage() {
 
         <section className="mt-16 rounded-3xl border border-pink-300/20 bg-white/5 p-8">
           <p className="uppercase tracking-[0.3em] text-pink-400">
-            Demo Certified Asset
+            Certified Asset
           </p>
 
           <div className="mt-8 grid gap-6 md:grid-cols-4">
@@ -51,18 +51,6 @@ export default function AssetsPage() {
               View Certificate
             </Link>
           </div>
-        </section>
-
-        <section className="mt-16 rounded-3xl border border-pink-300/20 bg-white/5 p-8">
-          <p className="uppercase tracking-[0.3em] text-pink-400">
-            Registry Note
-          </p>
-
-          <p className="mt-6 max-w-4xl text-lg leading-relaxed text-zinc-300">
-            This safe deployment page keeps the public asset registry available
-            while the live Supabase asset table is connected to the production
-            dashboard. Verification and certificates remain fully operational.
-          </p>
         </section>
 
         <div className="mt-16">
