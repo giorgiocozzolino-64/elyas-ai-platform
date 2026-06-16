@@ -169,7 +169,7 @@ export default function HomePage() {
             style={{
               border: "1px solid #2A2318",
               background: "#0F0F0F",
-              padding: 40,
+              padding: 20,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -185,7 +185,7 @@ export default function HomePage() {
             <img
               src="/elyas-logo.png"
               alt="E.L.Y.A.S-A.I."
-              style={{ width: "100%", maxWidth: 200 }}
+              style={{ width: "90%" }}
             />
           </div>
         </section>
