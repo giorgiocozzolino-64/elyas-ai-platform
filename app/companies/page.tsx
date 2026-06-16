@@ -1,3 +1,5 @@
+// app/dashboard/page.tsx — v2.0 PREMIUM — 16/06/2026
+
 import Link from "next/link";
 
 const metrics = [
@@ -6,182 +8,512 @@ const metrics = [
   { title: "Certified Assets", value: "310" },
   { title: "Registered Owners", value: "8" },
   { title: "ERP Integrations", value: "1" },
-  { title: "Certification Status", value: "ACTIVE" },
+  { title: "Certification Status", value: "ACTIVE", highlight: true },
 ];
 
 const modules = [
   {
     title: "Certified Companies",
-    description:
-      "Verified producers, maisons, ateliers and technology companies.",
+    description: "Verified producers, maisons, ateliers and technology companies.",
     href: "/companies",
+    index: "01",
   },
   {
     title: "Certified Products",
-    description:
-      "Digital passports for spirits, whisky, food and luxury products.",
+    description: "Digital passports for spirits, whisky, food and luxury products.",
     href: "/products",
+    index: "02",
   },
   {
     title: "Certified Assets",
-    description:
-      "Bottles, casks, collections and registered premium assets.",
+    description: "Bottles, casks, collections and registered premium assets.",
     href: "/assets",
+    index: "03",
   },
   {
     title: "Registered Owners",
-    description:
-      "Ownership registry, transfers, certificates and collector records.",
+    description: "Ownership registry, transfers, certificates and collector records.",
     href: "/owners",
+    index: "04",
   },
 ];
 
 const integrations = [
-  { name: "Oracle NetSuite", status: "CONNECTED" },
-  { name: "SAP", status: "PLANNED" },
-  { name: "Microsoft Dynamics", status: "PLANNED" },
-  { name: "Shopify", status: "PLANNED" },
-  { name: "Zucchetti", status: "PLANNED" },
+  { name: "Oracle NetSuite", status: "CONNECTED", live: true },
+  { name: "SAP", status: "PLANNED", live: false },
+  { name: "Microsoft Dynamics", status: "PLANNED", live: false },
+  { name: "Shopify", status: "PLANNED", live: false },
+  { name: "Zucchetti", status: "PLANNED", live: false },
 ];
 
-export default function HomePage() {
+const markets = ["United Kingdom", "Italy", "Germany", "Poland", "Netherlands", "Global"];
+
+export default function DashboardPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="mx-auto max-w-7xl px-8 py-20">
-        <p className="uppercase tracking-[0.4em] text-pink-400">
+    <main
+      style={{
+        minHeight: "100vh",
+        backgroundColor: "#080808",
+        color: "#F5F0E8",
+        fontFamily: "'Georgia', 'Times New Roman', serif",
+      }}
+    >
+      {/* ── TOP BAR ─────────────────────────────────────────── */}
+      <div
+        style={{
+          borderBottom: "1px solid #2A2318",
+          padding: "0 48px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          height: 56,
+        }}
+      >
+        <span style={topBarText}>Mc Fratm Ltd · Scotland</span>
+        <span style={{ ...topBarText, color: "#C9A84C" }}>
           Digital Certification Authority
-        </p>
+        </span>
+      </div>
 
-        <h1 className="mt-6 max-w-5xl text-6xl font-bold leading-tight">
-          E.L.Y.A.S-A.I. 2.0
-        </h1>
+      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 48px" }}>
 
-        <p className="mt-6 max-w-4xl text-xl leading-relaxed text-zinc-400">
-          The digital trust layer for premium food, beverage, spirits and luxury
-          products. Certifying provenance, ownership, maturation, authenticity
-          and product intelligence.
-        </p>
+        {/* ── HERO ────────────────────────────────────────────── */}
+        <section style={{ padding: "80px 0 64px" }}>
+          <p style={eyebrow}>I · Platform Overview</p>
 
-        <div className="mt-10 rounded-3xl border border-pink-300/20 bg-white/5 p-8">
-          <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
-            Core Manifesto
+          <h1
+            style={{
+              fontSize: "clamp(48px, 7vw, 88px)",
+              fontWeight: 400,
+              lineHeight: 0.92,
+              letterSpacing: "-0.02em",
+              color: "#F5F0E8",
+              margin: "24px 0 8px",
+            }}
+          >
+            E.L.Y.A.S-A.I.
+          </h1>
+          <h1
+            style={{
+              fontSize: "clamp(48px, 7vw, 88px)",
+              fontWeight: 700,
+              lineHeight: 0.92,
+              letterSpacing: "-0.02em",
+              color: "#C9A84C",
+              margin: "0 0 40px",
+            }}
+          >
+            2.0
+          </h1>
+
+          <p
+            style={{
+              fontSize: 18,
+              lineHeight: 1.65,
+              color: "#BDB49A",
+              maxWidth: 680,
+              margin: 0,
+            }}
+          >
+            The digital trust layer for premium food, beverage, spirits and
+            luxury products. Certifying provenance, ownership, maturation,
+            authenticity and product intelligence.
           </p>
+        </section>
 
-          <h2 className="mt-4 text-3xl font-bold">
-            Every certified product has a story.
-          </h2>
+        <GoldRule />
 
-          <p className="mt-4 max-w-5xl text-zinc-400">
-            Every bottle, every cask, every ingredient and every journey leaves a
-            trace. E.L.Y.A.S-A.I. preserves, verifies and shares that story.
-          </p>
-        </div>
+        {/* ── MANIFESTO ───────────────────────────────────────── */}
+        <section style={{ padding: "72px 0" }}>
+          <div
+            style={{
+              border: "1px solid #2A2318",
+              background: "#0F0F0F",
+              padding: "48px 56px",
+              position: "relative",
+            }}
+          >
+            <span style={{ position: "absolute", top: -1, left: -1, width: 20, height: 20, borderTop: "2px solid #C9A84C", borderLeft: "2px solid #C9A84C" }} />
+            <span style={{ position: "absolute", top: -1, right: -1, width: 20, height: 20, borderTop: "2px solid #C9A84C", borderRight: "2px solid #C9A84C" }} />
+            <span style={{ position: "absolute", bottom: -1, left: -1, width: 20, height: 20, borderBottom: "2px solid #C9A84C", borderLeft: "2px solid #C9A84C" }} />
+            <span style={{ position: "absolute", bottom: -1, right: -1, width: 20, height: 20, borderBottom: "2px solid #C9A84C", borderRight: "2px solid #C9A84C" }} />
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {metrics.map((metric) => (
-            <div
-              key={metric.title}
-              className="rounded-3xl border border-white/10 bg-white/5 p-6"
+            <p style={{ ...eyebrow, marginBottom: 20 }}>Core Manifesto</p>
+
+            <h2
+              style={{
+                fontSize: "clamp(24px, 3vw, 36px)",
+                fontWeight: 400,
+                color: "#F5F0E8",
+                margin: "0 0 20px",
+                lineHeight: 1.2,
+              }}
             >
-              <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
-                {metric.title}
-              </p>
+              Every certified product has a{" "}
+              <span style={{ color: "#C9A84C", fontStyle: "italic" }}>story.</span>
+            </h2>
 
-              <p className="mt-4 text-4xl font-bold text-pink-300">
-                {metric.value}
+            <div style={{ borderLeft: "2px solid #C9A84C", paddingLeft: 28, maxWidth: 680 }}>
+              <p
+                style={{
+                  fontSize: 16,
+                  lineHeight: 1.7,
+                  color: "#A89878",
+                  fontFamily: "system-ui, sans-serif",
+                  margin: 0,
+                }}
+              >
+                Every bottle, every cask, every ingredient and every journey
+                leaves a trace. E.L.Y.A.S-A.I. preserves, verifies and shares
+                that story.
               </p>
             </div>
-          ))}
-        </div>
+          </div>
+        </section>
 
-        <div className="mt-20">
-          <p className="uppercase tracking-[0.35em] text-pink-400">
-            Platform Modules
-          </p>
+        <GoldRule />
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {modules.map((module) => (
+        {/* ── METRICS ─────────────────────────────────────────── */}
+        <section style={{ padding: "64px 0" }}>
+          <p style={{ ...eyebrow, marginBottom: 32 }}>II · Platform Metrics</p>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: 1,
+              background: "#1C1810",
+            }}
+          >
+            {metrics.map((m) => (
+              <div key={m.title} style={{ background: "#080808", padding: "36px 32px" }}>
+                <p
+                  style={{
+                    fontSize: 10,
+                    letterSpacing: "0.45em",
+                    color: "#7A6840",
+                    fontFamily: "system-ui, sans-serif",
+                    textTransform: "uppercase",
+                    margin: "0 0 16px",
+                  }}
+                >
+                  {m.title}
+                </p>
+                <p
+                  style={{
+                    fontSize: 42,
+                    fontWeight: 700,
+                    color: m.highlight ? "#C9A84C" : "#F5F0E8",
+                    margin: 0,
+                    fontFamily: "Georgia, serif",
+                  }}
+                >
+                  {m.value}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <GoldRule />
+
+        {/* ── PLATFORM MODULES ────────────────────────────────── */}
+        <section style={{ padding: "80px 0" }}>
+          <p style={{ ...eyebrow, marginBottom: 40 }}>III · Platform Modules</p>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: 1,
+              background: "#1C1810",
+            }}
+          >
+            {modules.map((mod) => (
               <Link
-                key={module.href}
-                href={module.href}
-                className="rounded-3xl border border-pink-300/20 bg-white/5 p-8 transition hover:border-pink-300/60 hover:bg-pink-500/10"
+                key={mod.href}
+                href={mod.href}
+                style={{
+                  background: "#080808",
+                  padding: "48px 40px",
+                  textDecoration: "none",
+                  display: "block",
+                }}
               >
-                <h2 className="text-3xl font-bold">{module.title}</h2>
+                <p
+                  style={{
+                    fontSize: 10,
+                    letterSpacing: "0.4em",
+                    color: "#C9A84C",
+                    fontFamily: "system-ui, sans-serif",
+                    textTransform: "uppercase",
+                    margin: "0 0 20px",
+                  }}
+                >
+                  {mod.index}
+                </p>
 
-                <p className="mt-4 text-zinc-400">{module.description}</p>
+                <h2
+                  style={{
+                    fontSize: 26,
+                    fontWeight: 700,
+                    color: "#F5F0E8",
+                    margin: "0 0 16px",
+                    lineHeight: 1.15,
+                  }}
+                >
+                  {mod.title}
+                </h2>
 
-                <p className="mt-8 text-pink-300">Open Module →</p>
+                <p
+                  style={{
+                    fontSize: 15,
+                    lineHeight: 1.65,
+                    color: "#A89878",
+                    fontFamily: "system-ui, sans-serif",
+                    margin: "0 0 32px",
+                  }}
+                >
+                  {mod.description}
+                </p>
+
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <div style={{ width: 20, height: 1, background: "#C9A84C" }} />
+                  <span
+                    style={{
+                      fontSize: 12,
+                      color: "#C9A84C",
+                      fontFamily: "system-ui, sans-serif",
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    Open Module
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
-        </div>
+        </section>
 
-        <div className="mt-20 grid gap-8 lg:grid-cols-2">
-          <section className="rounded-3xl border border-white/10 bg-white/5 p-8">
-            <p className="uppercase tracking-[0.3em] text-pink-400">
-              ERP Integrations
-            </p>
+        <GoldRule />
 
-            <div className="mt-8 space-y-4">
-              {integrations.map((item) => (
-                <div
-                  key={item.name}
-                  className="flex items-center justify-between border-b border-white/10 pb-4"
-                >
-                  <span className="text-zinc-300">{item.name}</span>
+        {/* ── ERP + INTELLIGENCE ──────────────────────────────── */}
+        <section style={{ padding: "80px 0" }}>
+          <p style={{ ...eyebrow, marginBottom: 40 }}>IV · Integrations & Intelligence</p>
 
-                  <span
-                    className={
-                      item.status === "CONNECTED"
-                        ? "text-green-400"
-                        : "text-zinc-500"
-                    }
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "#1C1810" }}>
+
+            {/* ERP */}
+            <div style={{ background: "#080808", padding: "48px 40px" }}>
+              <p style={{ ...eyebrow, marginBottom: 32 }}>ERP Integrations</p>
+
+              <div>
+                {integrations.map((item, i) => (
+                  <div
+                    key={item.name}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      padding: "16px 0",
+                      borderBottom: i < integrations.length - 1 ? "1px solid #1C1810" : "none",
+                    }}
                   >
-                    {item.status}
-                  </span>
-                </div>
-              ))}
+                    <span
+                      style={{
+                        fontSize: 15,
+                        color: "#BDB49A",
+                        fontFamily: "system-ui, sans-serif",
+                      }}
+                    >
+                      {item.name}
+                    </span>
+                    <span
+                      style={{
+                        fontSize: 9,
+                        letterSpacing: "0.35em",
+                        color: item.live ? "#6DBF8A" : "#3A3020",
+                        fontFamily: "system-ui, sans-serif",
+                        textTransform: "uppercase",
+                        border: `1px solid ${item.live ? "#2A5A3A" : "#2A2318"}`,
+                        padding: "4px 10px",
+                      }}
+                    >
+                      {item.status}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </section>
 
-          <section className="rounded-3xl border border-white/10 bg-white/5 p-8">
-            <p className="uppercase tracking-[0.3em] text-pink-400">
-              Global Intelligence
-            </p>
+            {/* Intelligence */}
+            <div style={{ background: "#080808", padding: "48px 40px" }}>
+              <p style={{ ...eyebrow, marginBottom: 32 }}>Global Intelligence</p>
 
-            <h2 className="mt-6 text-3xl font-bold">
-              Scan, ownership and certification data.
-            </h2>
+              <h2
+                style={{
+                  fontSize: 24,
+                  fontWeight: 400,
+                  color: "#F5F0E8",
+                  margin: "0 0 20px",
+                  lineHeight: 1.25,
+                }}
+              >
+                Scan, ownership and{" "}
+                <span style={{ color: "#C9A84C", fontStyle: "italic" }}>
+                  certification data.
+                </span>
+              </h2>
 
-            <p className="mt-4 text-zinc-400">
-              Future dashboard layer for global scans, country intelligence,
-              owner activity, product lifecycle events and premium market
-              insights.
-            </p>
+              <p
+                style={{
+                  fontSize: 14,
+                  lineHeight: 1.7,
+                  color: "#A89878",
+                  fontFamily: "system-ui, sans-serif",
+                  margin: "0 0 36px",
+                }}
+              >
+                Future dashboard layer for global scans, country intelligence,
+                owner activity, product lifecycle events and premium market
+                insights.
+              </p>
 
-            <div className="mt-8 grid grid-cols-2 gap-4 text-sm text-zinc-400">
-              <span>United Kingdom</span>
-              <span>Italy</span>
-              <span>Germany</span>
-              <span>Poland</span>
-              <span>Netherlands</span>
-              <span>Global</span>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: 1,
+                  background: "#1C1810",
+                }}
+              >
+                {markets.map((m) => (
+                  <div
+                    key={m}
+                    style={{
+                      background: "#080808",
+                      padding: "12px 16px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: 12,
+                        color: "#7A6840",
+                        fontFamily: "system-ui, sans-serif",
+                        letterSpacing: "0.1em",
+                      }}
+                    >
+                      {m}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
 
-        <div className="mt-20 rounded-3xl border border-pink-300/20 bg-pink-500/10 p-8">
-          <h2 className="text-3xl font-bold">
-            India and China can produce millions of litres. We produce certified
-            trust.
+        <GoldRule />
+
+        {/* ── CLOSING STATEMENT ───────────────────────────────── */}
+        <section
+          style={{
+            padding: "80px 0 100px",
+            border: "1px solid #2A2318",
+            background: "#0F0F0F",
+            margin: "64px 0",
+            position: "relative",
+          }}
+        >
+          <span style={{ position: "absolute", top: -1, left: -1, width: 20, height: 20, borderTop: "2px solid #C9A84C", borderLeft: "2px solid #C9A84C" }} />
+          <span style={{ position: "absolute", top: -1, right: -1, width: 20, height: 20, borderTop: "2px solid #C9A84C", borderRight: "2px solid #C9A84C" }} />
+          <span style={{ position: "absolute", bottom: -1, left: -1, width: 20, height: 20, borderBottom: "2px solid #C9A84C", borderLeft: "2px solid #C9A84C" }} />
+          <span style={{ position: "absolute", bottom: -1, right: -1, width: 20, height: 20, borderBottom: "2px solid #C9A84C", borderRight: "2px solid #C9A84C" }} />
+
+          <h2
+            style={{
+              fontSize: "clamp(22px, 2.5vw, 32px)",
+              fontWeight: 400,
+              color: "#F5F0E8",
+              maxWidth: 760,
+              lineHeight: 1.3,
+              margin: "0 0 20px",
+            }}
+          >
+            India and China can produce millions of litres.{" "}
+            <span style={{ color: "#C9A84C", fontStyle: "italic" }}>
+              We produce certified trust.
+            </span>
           </h2>
 
-          <p className="mt-4 text-zinc-300">
+          <p
+            style={{
+              fontSize: 15,
+              lineHeight: 1.7,
+              color: "#A89878",
+              fontFamily: "system-ui, sans-serif",
+              maxWidth: 640,
+              margin: 0,
+            }}
+          >
             The future challenge for Scotland is not producing more whisky. It
             is proving why Scottish whisky remains worth more.
           </p>
-        </div>
+        </section>
+
       </div>
+
+      {/* ── FOOTER ──────────────────────────────────────────── */}
+      <footer
+        style={{
+          borderTop: "1px solid #1C1810",
+          padding: "32px 48px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <span style={footerText}>© 2026 Mc Fratm Ltd · All Rights Reserved</span>
+        <span style={footerText}>E.L.Y.A.S-A.I.™</span>
+      </footer>
     </main>
   );
 }
+
+/* ── SHARED STYLES ───────────────────────────────────────────────────────── */
+
+function GoldRule() {
+  return (
+    <div
+      style={{
+        height: 1,
+        background:
+          "linear-gradient(90deg, transparent, #2A2318 20%, #C9A84C 50%, #2A2318 80%, transparent)",
+      }}
+    />
+  );
+}
+
+const topBarText: React.CSSProperties = {
+  fontSize: 11,
+  letterSpacing: "0.45em",
+  color: "#A89060",
+  fontFamily: "system-ui, sans-serif",
+  textTransform: "uppercase",
+};
+
+const eyebrow: React.CSSProperties = {
+  fontSize: 10,
+  letterSpacing: "0.6em",
+  color: "#C9A84C",
+  fontFamily: "system-ui, sans-serif",
+  textTransform: "uppercase",
+  margin: 0,
+};
+
+const footerText: React.CSSProperties = {
+  fontSize: 11,
+  color: "#7A6840",
+  letterSpacing: "0.3em",
+  fontFamily: "system-ui, sans-serif",
+  textTransform: "uppercase",
+};
