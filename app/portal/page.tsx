@@ -42,65 +42,48 @@ export default function CorporatePortalPage() {
         </p>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-3 border-b border-[#2A2318]">
+      <section className="grid grid-cols-1 md:grid-cols-3">
         <PortalCard
           href="/companies"
           title="Companies Registry"
           index="01"
           text="Manage certified producers, company profiles, certification status and onboarding records."
         />
+
         <PortalCard
           href="/products"
           title="Product Registry"
           index="02"
           text="Manage certified product classes, public product pages and certification metadata."
         />
+
         <PortalCard
           href="/portal/assets"
           title="Asset Registry"
           index="03"
           text="Control bottle, cask, batch, ingredient and unit-level certified digital assets."
         />
+
         <PortalCard
           href="/owners"
           title="Owner Registry"
           index="04"
           text="View ownership records, claims, transfers and verified owner profiles."
         />
+
         <PortalCard
           href="/portal/certificates"
           title="Certificate Centre"
           index="05"
           text="Generate, verify and manage certificates linked to product and asset identities."
         />
+
         <PortalCard
           href="/portal/analytics"
           title="Scan Analytics"
           index="06"
           text="Analyse QR/NFC scans, geographic reach, engagement and verification behaviour."
         />
-      </section>
-
-      <section className="px-10 lg:px-20 py-16">
-        <div className="border border-[#C9A84C] p-10">
-          <p className="text-xs uppercase tracking-[0.55em] text-[#C9A84C]">
-            II · Separation of Layers
-          </p>
-
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
-            <Layer title="Public Area">
-              Verification, product discovery, certificates and public trust.
-            </Layer>
-            <Layer title="Corporate Area">
-              Producer operations, product registration, assets and ownership
-              records.
-            </Layer>
-            <Layer title="Admin Area">
-              Platform governance, certification control and ecosystem
-              intelligence.
-            </Layer>
-          </div>
-        </div>
       </section>
     </main>
   );
@@ -122,19 +105,21 @@ function PortalCard({
       href={href}
       className="group min-h-[260px] border-r border-b border-[#2A2318] p-10 hover:bg-[#0D0B07] transition"
     >
-      <p className="text-[#C9A84C] tracking-[0.35em] text-xs">{index}</p>
-      <h2 className="mt-8 font-serif text-3xl text-[#F5F0E8]">{title}</h2>
-      <p className="mt-6 leading-relaxed text-[#BDB49A]">{text}</p>
-      <p className="mt-8 text-[#C9A84C]">Open →</p>
-    </Link>
-  );
-}
+      <p className="text-[#C9A84C] tracking-[0.35em] text-xs">
+        {index}
+      </p>
 
-function Layer({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <p className="font-serif text-3xl text-[#F5F0E8]">{title}</p>
-      <p className="mt-5 leading-relaxed text-[#BDB49A]">{children}</p>
-    </div>
+      <h2 className="mt-8 font-serif text-3xl text-[#F5F0E8]">
+        {title}
+      </h2>
+
+      <p className="mt-6 leading-relaxed text-[#BDB49A]">
+        {text}
+      </p>
+
+      <p className="mt-8 text-[#C9A84C]">
+        Open →
+      </p>
+    </Link>
   );
 }
