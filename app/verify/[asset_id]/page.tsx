@@ -1,4 +1,4 @@
-// app/verify/[asset_id]/page.tsx — v1.1 — 15/06/2026
+// app/verify/[asset_id]/page.tsx — v1.2 — ELYAS dark/gold theme
 
 import Link from "next/link";
 import { supabaseAdmin } from "@/lib/supabase/admin";
@@ -30,11 +30,11 @@ export default async function VerifyPage({ params }: VerifyPageProps) {
 
   if (!asset) {
     return (
-      <main className="min-h-screen bg-black text-white">
+      <main className="min-h-screen bg-[#080808] text-[#F5F0E8]">
         <div className="mx-auto max-w-4xl px-8 py-20">
           <h1 className="text-5xl font-bold">Asset Not Found</h1>
 
-          <p className="mt-6 text-zinc-400">
+          <p className="mt-6 text-[#A89878]">
             No certified asset found for: {serial}
           </p>
         </div>
@@ -43,39 +43,49 @@ export default async function VerifyPage({ params }: VerifyPageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[#080808] text-[#F5F0E8]">
       <div className="mx-auto max-w-4xl px-8 py-20">
-        <div className="rounded-[2rem] border border-pink-500/30 bg-white/5 p-12 text-center">
-          <img
-            src="/elyas-logo.png"
-            alt="E.L.Y.A.S-A.I."
-            className="mx-auto h-24 w-auto object-contain"
-          />
+        <div className="rounded-[2rem] border border-[#2A2318] bg-[#0F0F0F] p-12 text-center">
+          <div className="mx-auto flex w-full max-w-[320px] flex-col items-center justify-center gap-2 rounded-xl border border-[#2A2318] bg-[#E8DEC8] px-6 py-6">
+            <p className="flex items-center gap-2 whitespace-nowrap font-serif text-3xl font-bold leading-none text-[#0F0F0F]">
+              <span className="text-[0.5em] text-[#A8842E]">•(((•</span>
+              E.L.Y.A.S-A.I.
+              <span className="text-[0.5em] text-[#A8842E]">•)))•</span>
+            </p>
+            <div className="flex w-[78%] items-center gap-2">
+              <span className="h-px flex-1 bg-[#A8842E]" />
+              <span className="h-1.5 w-1.5 rotate-45 bg-[#A8842E]" />
+              <span className="h-px flex-1 bg-[#A8842E]" />
+            </div>
+            <p className="px-2 text-center text-[11px] font-medium leading-[1.4] text-[#3A3020]">
+              Enhanced Living Systems through Acoustic Stimulation — Artisanal Intelligence
+            </p>
+          </div>
 
-          <p className="mt-6 uppercase tracking-[0.4em] text-pink-400">
+          <p className="mt-6 uppercase tracking-[0.4em] text-[#C9A84C]">
             Digital Certification Authority
           </p>
 
-          <h1 className="mt-6 text-6xl font-bold">PINKGLOW GIN</h1>
+          <h1 className="mt-6 text-6xl font-bold font-serif">PINKGLOW GIN</h1>
 
-          <p className="mt-4 text-xl text-zinc-400">Asset Verification</p>
+          <p className="mt-4 text-xl text-[#A89878]">Asset Verification</p>
 
           <div className="mt-10">
-            <div className="mx-auto flex h-32 w-32 items-center justify-center rounded-full border-4 border-green-500 text-green-400">
+            <div className="mx-auto flex h-32 w-32 items-center justify-center rounded-full border-4 border-[#6FAE7A] text-[#6FAE7A]">
               ✓
             </div>
 
-            <h2 className="mt-8 text-4xl font-bold text-green-400">
+            <h2 className="mt-8 text-4xl font-bold text-[#6FAE7A]">
               AUTHENTIC
             </h2>
 
-            <p className="mt-4 text-zinc-400">
+            <p className="mt-4 text-[#A89878]">
               This product exists inside the E.L.Y.A.S-A.I. Certification
               Registry.
             </p>
           </div>
 
-          <div className="mt-12 rounded-3xl border border-white/10 bg-black/30 p-8 text-left">
+          <div className="mt-12 rounded-3xl border border-[#2A2318] bg-[#080808] p-8 text-left">
             <Info label="Asset ID" value={asset.serial} />
             <Info label="Producer" value="Old Tom Gin Company Ltd" />
             <Info label="Product" value={asset.product_name} />
@@ -89,38 +99,38 @@ export default async function VerifyPage({ params }: VerifyPageProps) {
 
           {claim ? (
             <div className="mt-12">
-              <div className="rounded-3xl border border-green-500/20 bg-green-500/10 p-8">
-                <p className="uppercase tracking-[0.3em] text-green-400">
+              <div className="rounded-3xl border border-[#2E4A33] bg-[#6FAE7A]/10 p-8">
+                <p className="uppercase tracking-[0.3em] text-[#6FAE7A]">
                   Ownership Verified
                 </p>
 
-                <h3 className="mt-4 text-3xl font-bold">
+                <h3 className="mt-4 text-3xl font-bold text-[#F5F0E8]">
                   {claim.owner_name}
                 </h3>
               </div>
 
               <Link
                 href={`/certificate/${asset.serial}`}
-                className="mt-10 inline-block rounded-2xl bg-pink-600 px-8 py-4 font-bold text-white hover:bg-pink-500"
+                className="mt-10 inline-block rounded-2xl bg-[#C9A84C] px-8 py-4 font-bold text-[#080808] hover:bg-[#D5B85A]"
               >
                 VIEW DIGITAL CERTIFICATE
               </Link>
             </div>
           ) : (
             <div className="mt-12">
-              <div className="rounded-3xl border border-yellow-500/20 bg-yellow-500/10 p-8">
-                <p className="uppercase tracking-[0.3em] text-yellow-400">
+              <div className="rounded-3xl border border-[#4A3F1E] bg-[#C9A84C]/10 p-8">
+                <p className="uppercase tracking-[0.3em] text-[#D5B85A]">
                   Awaiting Registration
                 </p>
 
-                <p className="mt-4 text-lg">
+                <p className="mt-4 text-lg text-[#E8DEC8]">
                   This certified asset has not yet been registered to an owner.
                 </p>
               </div>
 
               <Link
                 href={`/claim/${asset.serial}`}
-                className="mt-10 inline-block rounded-2xl bg-pink-600 px-8 py-4 font-bold text-white hover:bg-pink-500"
+                className="mt-10 inline-block rounded-2xl bg-[#C9A84C] px-8 py-4 font-bold text-[#080808] hover:bg-[#D5B85A]"
               >
                 CLAIM THIS ASSET
               </Link>
@@ -135,11 +145,11 @@ export default async function VerifyPage({ params }: VerifyPageProps) {
 function Info({ label, value }: { label: string; value: string | number }) {
   return (
     <div className="mb-4">
-      <p className="text-xs uppercase tracking-[0.25em] text-zinc-500">
+      <p className="text-xs uppercase tracking-[0.25em] text-[#7A6840]">
         {label}
       </p>
 
-      <p className="mt-2 text-lg font-semibold">{value}</p>
+      <p className="mt-2 text-lg font-semibold text-[#E8DEC8]">{value}</p>
     </div>
   );
 }
