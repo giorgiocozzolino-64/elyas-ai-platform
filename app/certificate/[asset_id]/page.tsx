@@ -81,11 +81,13 @@ export default async function CertificatePage({ params }: CertificatePageProps) 
         <div className="relative z-10">
           <header className="grid grid-cols-[115px_1fr_115px] items-start gap-3 border-b border-[#2A2318] pb-3">
             <div className="text-center">
-              <img
-                src="/elyas-logo.png"
-                alt="E.L.Y.A.S-A.I."
-                className="mx-auto h-28 w-auto object-contain"
-              />
+              <div className="rounded-lg border border-[#2A2318] bg-[#E8DEC8] p-2">
+                <img
+                  src="/elyas-logo.png"
+                  alt="E.L.Y.A.S-A.I."
+                  className="mx-auto h-18 w-18 object-contain"
+                />
+              </div>
 
               <p className="mt-1 text-[7px] font-bold uppercase tracking-[0.2em] text-[#C9A84C]">
                 Certification Authority
