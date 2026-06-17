@@ -84,7 +84,7 @@ export default function HomePage() {
                 <span className="h-px flex-1 bg-[#A8842E]" />
               </div>
 
-              <p className="max-w-sm text-center text-base leading-relaxed text-[#3A3020]">
+              <<section id="producers" className="px-10 lg:px-20 py-16"></>p className="max-w-sm text-center text-base leading-relaxed text-[#3A3020]">
                 Enhanced Living Systems through Acoustic Stimulation — Artisanal Intelligence
               </p>
             </div>
@@ -92,57 +92,76 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="grid grid-cols-1 md:grid-cols-5 border-b border-[#2A2318]">
-        <Feature title="What We Do">
-          We certify identity, origin, ownership and story of premium products.
-        </Feature>
-        <Feature title="How It Works">
-          Producer → Product → Asset → Owner → Certificate → Verification.
-        </Feature>
-        <Feature title="Who It’s For">
-          Producers, luxury brands, distilleries, food companies, collectors and
-          investors.
-        </Feature>
-        <Feature title="What We Certify">
-          Product classes and certified assets, not static showcase projects.
-        </Feature>
-        <Feature title="Built For Trust">
-          Security, transparency and digital provenance at the core of every
-          certificate.
-        </Feature>
-      </section>
-
       <section id="producers" className="px-10 lg:px-20 py-16">
-        <div className="flex items-center gap-8">
-          <div className="h-px flex-1 bg-[#2A2318]" />
-          <p className="text-[#C9A84C] uppercase tracking-[0.5em]">
-            Access Portals
-          </p>
-          <div className="h-px flex-1 bg-[#2A2318]" />
-        </div>
+  <div className="flex items-center gap-8">
+    <div className="h-px flex-1 bg-[#2A2318]" />
+    <p className="text-[#C9A84C] uppercase tracking-[0.5em]">
+      Platform Layers
+    </p>
+    <div className="h-px flex-1 bg-[#2A2318]" />
+  </div>
 
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
-          <Portal
-            href="/verify/PG-FC26-001"
-            title="Public Verification"
-            text="Verify authenticity, origin and certification of any product."
-          />
-          <Portal
-            href="/login"
-            title="Producer Portal"
-            text="Manage products, assets, ownership records and certifications."
-          />
-          <Portal
-            href="/dashboard"
-            title="Internal Dashboard"
-            text="Access the platform control centre and certification analytics."
-          />
-        </div>
+  <div className="mt-10 grid gap-8 md:grid-cols-3">
+    <Portal
+      href="/verify/PG-FC26-001"
+      title="Public Area"
+      text="Verification, product discovery, certificates and public trust."
+    />
 
-        <p className="mt-14 text-center text-xs uppercase tracking-[0.55em] text-[#D5B85A]">
-          Certify · Protect · Preserve · Elevate
+    <Portal
+      href="/portal"
+      title="Corporate Area"
+      text="Producer operations, product registration, assets and ownership records."
+    />
+
+    <Portal
+      href="/dashboard"
+      title="Admin Area"
+      text="Platform governance, certification control and ecosystem intelligence."
+    />
+  </div>
+
+  <div className="mt-16 border border-[#C9A84C] p-10">
+    <p className="text-xs uppercase tracking-[0.55em] text-[#C9A84C]">
+      II · Separation of Layers
+    </p>
+
+    <div className="mt-10 grid gap-8 md:grid-cols-3">
+      <div>
+        <p className="font-serif text-3xl text-[#F5F0E8]">
+          Public Area
         </p>
-      </section>
+        <p className="mt-5 leading-relaxed text-[#BDB49A]">
+          Verification, product discovery, certificates and public trust.
+        </p>
+      </div>
+
+      <div>
+        <p className="font-serif text-3xl text-[#F5F0E8]">
+          Corporate Area
+        </p>
+        <p className="mt-5 leading-relaxed text-[#BDB49A]">
+          Producer operations, product registration, assets and ownership
+          records.
+        </p>
+      </div>
+
+      <div>
+        <p className="font-serif text-3xl text-[#F5F0E8]">
+          Admin Area
+        </p>
+        <p className="mt-5 leading-relaxed text-[#BDB49A]">
+          Platform governance, certification control and ecosystem
+          intelligence.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <p className="mt-14 text-center text-xs uppercase tracking-[0.55em] text-[#D5B85A]">
+    Trust · Governance · Intelligence
+  </p>
+</section>
     </main>
   );
 }
