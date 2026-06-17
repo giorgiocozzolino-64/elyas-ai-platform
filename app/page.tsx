@@ -182,11 +182,59 @@ export default function HomePage() {
             <span style={{ position: "absolute", top: -1, right: -1, width: 20, height: 20, borderTop: "2px solid #C9A84C", borderRight: "2px solid #C9A84C" }} />
             <span style={{ position: "absolute", bottom: -1, left: -1, width: 20, height: 20, borderBottom: "2px solid #C9A84C", borderLeft: "2px solid #C9A84C" }} />
             <span style={{ position: "absolute", bottom: -1, right: -1, width: 20, height: 20, borderBottom: "2px solid #C9A84C", borderRight: "2px solid #C9A84C" }} />
-            <img
-              src="/elyas-logo.png"
-              alt="E.L.Y.A.S-A.I."
-              style={{ width: "90%" }}
-            />
+
+            {/* Cream panel with wordmark */}
+            <div
+              style={{
+                background: "#F5F0E8",
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 16,
+                padding: "32px 24px",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "clamp(20px, 2.6vw, 30px)",
+                  fontWeight: 700,
+                  letterSpacing: "0.02em",
+                  color: "#0F0F0F",
+                  margin: 0,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                <span style={{ color: "#C9A84C", fontSize: "0.6em" }}>•(((•</span>
+                E.L.Y.A.S-A.I.
+                <span style={{ color: "#C9A84C", fontSize: "0.6em" }}>•)))•</span>
+              </p>
+
+              <div style={{ display: "flex", alignItems: "center", gap: 10, width: "70%" }}>
+                <span style={{ flex: 1, height: 1, background: "#C9A84C" }} />
+                <span style={{ width: 5, height: 5, background: "#C9A84C", transform: "rotate(45deg)" }} />
+                <span style={{ flex: 1, height: 1, background: "#C9A84C" }} />
+              </div>
+
+              <p
+                style={{
+                  fontSize: 13,
+                  lineHeight: 1.6,
+                  color: "#3A3020",
+                  textAlign: "center",
+                  fontFamily: "system-ui, sans-serif",
+                  margin: 0,
+                  maxWidth: 280,
+                }}
+              >
+                Enhanced Living Systems through Acoustic Stimulation — Artisanal Intelligence
+              </p>
+            </div>
           </div>
         </section>
 
