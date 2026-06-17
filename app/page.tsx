@@ -2,545 +2,171 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        backgroundColor: "#080808",
-        color: "#F5F0E8",
-        fontFamily: "'Georgia', 'Times New Roman', serif",
-      }}
-    >
-      {/* ── TOP BAR ─────────────────────────────────────────── */}
-      <div
-        style={{
-          borderBottom: "1px solid #2A2318",
-          padding: "0 48px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          height: 56,
-        }}
-      >
-        <span
-          style={{
-            fontSize: 11,
-            letterSpacing: "0.45em",
-            color: "#A89060",
-            fontFamily: "system-ui, sans-serif",
-            textTransform: "uppercase",
-          }}
+    <main className="min-h-screen bg-[#050505] text-[#F5F0E8]">
+      <header className="border-b border-[#2A2318] px-10 py-5 flex items-center justify-between">
+        <div>
+          <p className="text-3xl font-serif tracking-widest">E.L.Y.A.S-A.I.</p>
+          <p className="text-xs tracking-[0.35em] text-[#C9A84C] uppercase">
+            Certified Product Intelligence
+          </p>
+        </div>
+
+        <nav className="hidden lg:flex gap-9 text-xs uppercase tracking-[0.28em]">
+          <Link href="/" className="text-[#C9A84C]">Home</Link>
+          <Link href="/verify/PG-FC26-001">Verify</Link>
+          <Link href="/products">Certified Products</Link>
+          <Link href="#about">About</Link>
+          <Link href="#how">How It Works</Link>
+          <Link href="#producers">For Producers</Link>
+        </nav>
+
+        <Link
+          href="/login"
+          className="border border-[#C9A84C] px-8 py-3 text-xs uppercase tracking-[0.25em] text-[#C9A84C]"
         >
-          Mc Fratm Ltd · Scotland
-        </span>
-        <span
-          style={{
-            fontSize: 11,
-            letterSpacing: "0.35em",
-            color: "#C9A84C",
-            fontFamily: "system-ui, sans-serif",
-            textTransform: "uppercase",
-          }}
-        >
-          Digital Certification Authority
-        </span>
-      </div>
+          Login
+        </Link>
+      </header>
 
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 48px" }}>
+      <section className="grid min-h-[650px] grid-cols-1 lg:grid-cols-2 border-b border-[#2A2318]">
+        <div className="px-10 lg:px-20 py-20 flex flex-col justify-center">
+          <p className="text-xs uppercase tracking-[0.55em] text-[#C9A84C]">
+            I · Certified Product Intelligence
+          </p>
 
-        {/* ── HERO ────────────────────────────────────────────── */}
-        <section
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 300px",
-            gap: 64,
-            alignItems: "center",
-            padding: "100px 0 80px",
-          }}
-        >
-          <div>
-            <p
-              style={{
-                fontSize: 10,
-                letterSpacing: "0.6em",
-                color: "#C9A84C",
-                fontFamily: "system-ui, sans-serif",
-                textTransform: "uppercase",
-                marginBottom: 32,
-              }}
-            >
-              I · Certified Product Intelligence
+          <h1 className="mt-8 font-serif text-7xl lg:text-8xl leading-none">
+            E.L.Y.A.S-
+            <br />
+            <span className="text-[#C9A84C]">A.I.</span>
+          </h1>
+
+          <p className="mt-10 max-w-2xl font-serif text-2xl leading-relaxed text-[#E8DDBE]">
+            Certified Product Intelligence for Luxury Food, Beverage, Spirits
+            and Premium Craft Products.
+          </p>
+
+          <p className="mt-6 max-w-xl text-[#BDB49A]">
+            Preserving, verifying and sharing the story behind premium products.
+          </p>
+
+          <div className="mt-9 text-3xl font-serif leading-snug">
+            <p>We are not a QR code.</p>
+            <p className="text-[#C9A84C]">
+              We are the digital trust layer between physical products and
+              certified identity.
             </p>
-
-            <h1
-              style={{
-                fontSize: "clamp(56px, 8vw, 96px)",
-                fontWeight: 400,
-                lineHeight: 0.92,
-                letterSpacing: "-0.02em",
-                color: "#F5F0E8",
-                margin: "0 0 8px",
-              }}
-            >
-              E.L.Y.A.S
-            </h1>
-            <h1
-              style={{
-                fontSize: "clamp(56px, 8vw, 96px)",
-                fontWeight: 700,
-                lineHeight: 0.92,
-                letterSpacing: "-0.02em",
-                color: "#C9A84C",
-                margin: "0 0 48px",
-              }}
-            >
-              A.I.
-            </h1>
-
-            <p
-              style={{
-                fontSize: 22,
-                lineHeight: 1.5,
-                color: "#BDB49A",
-                maxWidth: 560,
-                margin: "0 0 16px",
-                fontWeight: 400,
-              }}
-            >
-              Certified Product Intelligence for Luxury Food, Beverage,
-              Spirits and Premium Craft Products.
-            </p>
-
-            <p
-              style={{
-                fontSize: 15,
-                color: "#A89878",
-                maxWidth: 480,
-                lineHeight: 1.6,
-                margin: "0 0 52px",
-                fontFamily: "system-ui, sans-serif",
-              }}
-            >
-              Preserving, verifying and sharing the story behind premium products.
-            </p>
-
-            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-              <Link
-                href="/verify/PG-FC26-001"
-                style={{
-                  display: "inline-block",
-                  background: "#C9A84C",
-                  color: "#080808",
-                  padding: "14px 36px",
-                  fontFamily: "system-ui, sans-serif",
-                  fontSize: 13,
-                  fontWeight: 700,
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  textDecoration: "none",
-                  border: "none",
-                }}
-              >
-                Verify a Product
-              </Link>
-
-              <Link
-                href="/products"
-                style={{
-                  display: "inline-block",
-                  background: "transparent",
-                  color: "#C9A84C",
-                  padding: "14px 36px",
-                  fontFamily: "system-ui, sans-serif",
-                  fontSize: 13,
-                  fontWeight: 600,
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  textDecoration: "none",
-                  border: "1px solid #3A3020",
-                }}
-              >
-                Certified Products
-              </Link>
-            </div>
           </div>
 
-          {/* Logo card */}
-          <div
-            style={{
-              border: "1px solid #2A2318",
-              background: "#0F0F0F",
-              padding: 20,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              aspectRatio: "1 / 1",
-              position: "relative",
-            }}
-          >
-            {/* Corner accents */}
-            <span style={{ position: "absolute", top: -1, left: -1, width: 20, height: 20, borderTop: "2px solid #C9A84C", borderLeft: "2px solid #C9A84C" }} />
-            <span style={{ position: "absolute", top: -1, right: -1, width: 20, height: 20, borderTop: "2px solid #C9A84C", borderRight: "2px solid #C9A84C" }} />
-            <span style={{ position: "absolute", bottom: -1, left: -1, width: 20, height: 20, borderBottom: "2px solid #C9A84C", borderLeft: "2px solid #C9A84C" }} />
-            <span style={{ position: "absolute", bottom: -1, right: -1, width: 20, height: 20, borderBottom: "2px solid #C9A84C", borderRight: "2px solid #C9A84C" }} />
+          <div className="mt-10 flex flex-wrap gap-5">
+            <Link href="/verify/PG-FC26-001" className="gold-btn">
+              Verify a Product →
+            </Link>
+            <Link href="/products" className="dark-btn">
+              Certified Products →
+            </Link>
+          </div>
+        </div>
 
-            {/* Cream panel with wordmark */}
-            <div
-              style={{
-                background: "#F5F0E8",
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 16,
-                padding: "32px 24px",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "clamp(20px, 2.6vw, 30px)",
-                  fontWeight: 700,
-                  letterSpacing: "0.02em",
-                  color: "#0F0F0F",
-                  margin: 0,
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 10,
-                  whiteSpace: "nowrap",
-                }}
-              >
-                <span style={{ color: "#C9A84C", fontSize: "0.6em" }}>•(((•</span>
+        <div className="px-10 lg:px-20 py-20 flex items-center justify-center">
+          <div className="relative w-full max-w-3xl border border-[#C9A84C] p-8">
+            <div className="bg-[#E8DEC8] min-h-[420px] flex flex-col items-center justify-center gap-8 px-8 py-6">
+              <p className="flex items-center gap-4 whitespace-nowrap font-serif text-4xl lg:text-5xl font-bold text-[#0F0F0F]">
+                <span className="text-[0.55em] text-[#A8842E]">•(((•</span>
                 E.L.Y.A.S-A.I.
-                <span style={{ color: "#C9A84C", fontSize: "0.6em" }}>•)))•</span>
+                <span className="text-[0.55em] text-[#A8842E]">•)))•</span>
               </p>
 
-              <div style={{ display: "flex", alignItems: "center", gap: 10, width: "70%" }}>
-                <span style={{ flex: 1, height: 1, background: "#C9A84C" }} />
-                <span style={{ width: 5, height: 5, background: "#C9A84C", transform: "rotate(45deg)" }} />
-                <span style={{ flex: 1, height: 1, background: "#C9A84C" }} />
+              <div className="flex w-[78%] items-center gap-3">
+                <span className="h-px flex-1 bg-[#A8842E]" />
+                <span className="h-2 w-2 rotate-45 bg-[#A8842E]" />
+                <span className="h-px flex-1 bg-[#A8842E]" />
               </div>
 
-              <p
-                style={{
-                  fontSize: 13,
-                  lineHeight: 1.6,
-                  color: "#3A3020",
-                  textAlign: "center",
-                  fontFamily: "system-ui, sans-serif",
-                  margin: 0,
-                  maxWidth: 280,
-                }}
-              >
+              <p className="max-w-sm text-center text-base leading-relaxed text-[#3A3020]">
                 Enhanced Living Systems through Acoustic Stimulation — Artisanal Intelligence
               </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ── GOLD RULE ───────────────────────────────────────── */}
-        <GoldRule />
+      <section id="about" className="grid grid-cols-1 md:grid-cols-5 border-b border-[#2A2318]">
+        <Feature title="What We Do">
+          We certify identity, origin, ownership and story of premium products.
+        </Feature>
+        <Feature title="How It Works">
+          Producer → Product → Asset → Owner → Certificate → Verification.
+        </Feature>
+        <Feature title="Who It’s For">
+          Producers, luxury brands, distilleries, food companies, collectors and
+          investors.
+        </Feature>
+        <Feature title="What We Certify">
+          Product classes and certified assets, not static showcase projects.
+        </Feature>
+        <Feature title="Built For Trust">
+          Security, transparency and digital provenance at the core of every
+          certificate.
+        </Feature>
+      </section>
 
-        {/* ── METRICS ─────────────────────────────────────────── */}
-        <section style={{ padding: "64px 0" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: "#1C1810" }}>
-            <Metric title="Certified Projects" value="5" />
-            <Metric title="Certified Assets" value="310+" />
-            <Metric title="Registered Owners" value="12" />
-            <Metric title="Status" value="ACTIVE" highlight />
-          </div>
-        </section>
-
-        <GoldRule />
-
-        {/* ── MANIFESTO ───────────────────────────────────────── */}
-        <section style={{ padding: "80px 0" }}>
-          <p style={eyebrow}>II · Manifesto</p>
-
-          <h2
-            style={{
-              fontSize: "clamp(32px, 4vw, 52px)",
-              fontWeight: 400,
-              lineHeight: 1.15,
-              color: "#F5F0E8",
-              maxWidth: 720,
-              margin: "0 0 32px",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            Every certified product{" "}
-            <span style={{ color: "#C9A84C", fontStyle: "italic" }}>
-              has a story.
-            </span>
-          </h2>
-
-          <div
-            style={{
-              borderLeft: "2px solid #C9A84C",
-              paddingLeft: 32,
-              maxWidth: 600,
-            }}
-          >
-            <p style={{ fontSize: 17, lineHeight: 1.7, color: "#C8BFA8", margin: "0 0 12px", fontFamily: "system-ui, sans-serif" }}>
-              Every bottle, every cask, every ingredient, every journey leaves a trace.
-            </p>
-            <p style={{ fontSize: 17, lineHeight: 1.7, color: "#C8BFA8", margin: 0, fontFamily: "system-ui, sans-serif" }}>
-              Our mission is to preserve, verify and share that story.
-            </p>
-          </div>
-        </section>
-
-        <GoldRule />
-
-        {/* ── WHAT WE CERTIFY ─────────────────────────────────── */}
-        <section style={{ padding: "80px 0" }}>
-          <p style={eyebrow}>III · What We Certify</p>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "#1C1810", marginTop: 40 }}>
-            <CertCard title="Spirits & Whisky" index="01" />
-            <CertCard title="Wine" index="02" />
-            <CertCard title="Premium Seafood" index="03" />
-            <CertCard title="Artisan Food" index="04" />
-            <CertCard title="Maturation Vessels" index="05" />
-            <CertCard title="Luxury Collections" index="06" />
-          </div>
-        </section>
-
-        <GoldRule />
-
-        {/* ── FOR PRODUCERS ───────────────────────────────────── */}
-        <section style={{ padding: "80px 0" }}>
-          <p style={eyebrow}>IV · For Certified Producers</p>
-
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start", marginTop: 40 }}>
-            <div>
-              <h2
-                style={{
-                  fontSize: "clamp(28px, 3vw, 42px)",
-                  fontWeight: 400,
-                  lineHeight: 1.2,
-                  color: "#F5F0E8",
-                  margin: "0 0 24px",
-                }}
-              >
-                Transform your product into a{" "}
-                <span style={{ color: "#C9A84C", fontStyle: "italic" }}>certified digital asset.</span>
-              </h2>
-
-              <p style={{ fontSize: 16, lineHeight: 1.7, color: "#A89878", fontFamily: "system-ui, sans-serif", margin: "0 0 40px" }}>
-                E.L.Y.A.S-A.I. supports producers, distilleries, food brands and
-                premium craft companies by creating verified digital product
-                passports, ownership records and traceable product histories.
-              </p>
-
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                <Link href="/portal/old-tom-gin-company" style={btnPrimary}>
-                  Company Portal
-                </Link>
-                <Link href="/dashboard" style={btnSecondary}>
-                  Dashboard
-                </Link>
-              </div>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "#1C1810" }}>
-              {["Product Certification", "Ownership Registry", "Digital Passport", "Certificate Generation", "ERP Integration", "Producer Portal"].map((t, i) => (
-                <div
-                  key={t}
-                  style={{
-                    background: "#080808",
-                    padding: "28px 24px",
-                    borderBottom: i < 4 ? "1px solid #1C1810" : "none",
-                  }}
-                >
-                  <p style={{ fontSize: 10, color: "#C9A84C", letterSpacing: "0.4em", fontFamily: "system-ui, sans-serif", textTransform: "uppercase", margin: "0 0 10px" }}>
-                    {String(i + 1).padStart(2, "0")}
-                  </p>
-                  <p style={{ fontSize: 15, color: "#BDB49A", margin: 0, fontFamily: "system-ui, sans-serif" }}>{t}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <GoldRule />
-
-        {/* ── ECOSYSTEM ───────────────────────────────────────── */}
-        <section style={{ padding: "80px 0" }}>
-          <p style={eyebrow}>V · Certified Ecosystem</p>
-
-          <h2
-            style={{
-              fontSize: "clamp(28px, 3vw, 42px)",
-              fontWeight: 400,
-              lineHeight: 1.2,
-              color: "#F5F0E8",
-              maxWidth: 640,
-              margin: "24px 0 16px",
-            }}
-          >
-            A growing network of certified producers, product classes and digital assets.
-          </h2>
-
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: "#A89878", maxWidth: 560, fontFamily: "system-ui, sans-serif", margin: "0 0 48px" }}>
-            Designed to support multiple companies, multiple product categories
-            and thousands of certified assets across premium food, beverage,
-            spirits and craft sectors.
+      <section id="producers" className="px-10 lg:px-20 py-16">
+        <div className="flex items-center gap-8">
+          <div className="h-px flex-1 bg-[#2A2318]" />
+          <p className="text-[#C9A84C] uppercase tracking-[0.5em]">
+            Access Portals
           </p>
+          <div className="h-px flex-1 bg-[#2A2318]" />
+        </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "#1C1810" }}>
-            <EcoCard title="Certified Producers" desc="Verified companies with audit trails and certification status" />
-            <EcoCard title="Certified Product Classes" desc="From single malt to premium seafood — every transformation certified" />
-            <EcoCard title="Global Verification Network" desc="QR and NFC-enabled instant provenance verification worldwide" />
-          </div>
+        <div className="mt-10 grid gap-8 md:grid-cols-3">
+          <Portal
+            href="/verify/PG-FC26-001"
+            title="Public Verification"
+            text="Verify authenticity, origin and certification of any product."
+          />
+          <Portal
+            href="/login"
+            title="Producer Portal"
+            text="Manage products, assets, ownership records and certifications."
+          />
+          <Portal
+            href="/dashboard"
+            title="Internal Dashboard"
+            text="Access the platform control centre and certification analytics."
+          />
+        </div>
 
-          <div style={{ marginTop: 40 }}>
-            <Link href="/products" style={btnPrimary}>
-              Explore Certified Products
-            </Link>
-          </div>
-        </section>
-
-        <GoldRule />
-
-        {/* ── CLOSING STATEMENT ───────────────────────────────── */}
-        <section
-          style={{
-            padding: "80px 0 100px",
-            textAlign: "center",
-          }}
-        >
-          <h2
-            style={{
-              fontSize: "clamp(24px, 3vw, 38px)",
-              fontWeight: 400,
-              color: "#F5F0E8",
-              letterSpacing: "0.02em",
-              margin: "0 0 16px",
-            }}
-          >
-            The QR code is only the key.
-          </h2>
-          <p
-            style={{
-              fontSize: 15,
-              color: "#C9A84C",
-              letterSpacing: "0.25em",
-              fontFamily: "system-ui, sans-serif",
-              textTransform: "uppercase",
-              margin: 0,
-            }}
-          >
-            The story begins when the door opens.
-          </p>
-        </section>
-
-      </div>
-
-      {/* ── FOOTER ──────────────────────────────────────────── */}
-      <footer
-        style={{
-          borderTop: "1px solid #1C1810",
-          padding: "32px 48px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <span style={{ fontSize: 11, color: "#7A6840", letterSpacing: "0.3em", fontFamily: "system-ui, sans-serif", textTransform: "uppercase" }}>
-          © 2026 Mc Fratm Ltd · All Rights Reserved
-        </span>
-        <span style={{ fontSize: 11, color: "#7A6840", letterSpacing: "0.3em", fontFamily: "system-ui, sans-serif", textTransform: "uppercase" }}>
-          E.L.Y.A.S-A.I.™
-        </span>
-      </footer>
+        <p className="mt-14 text-center text-xs uppercase tracking-[0.55em] text-[#D5B85A]">
+          Certify · Protect · Preserve · Elevate
+        </p>
+      </section>
     </main>
   );
 }
 
-/* ── SUB-COMPONENTS ─────────────────────────────────────────────────────── */
-
-function GoldRule() {
+function Feature({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div style={{ height: 1, background: "linear-gradient(90deg, transparent, #2A2318 20%, #C9A84C 50%, #2A2318 80%, transparent)" }} />
-  );
-}
-
-function Metric({ title, value, highlight }: { title: string; value: string; highlight?: boolean }) {
-  return (
-    <div style={{ background: "#080808", padding: "36px 32px" }}>
-      <p style={{ fontSize: 10, letterSpacing: "0.45em", color: "#7A6840", fontFamily: "system-ui, sans-serif", textTransform: "uppercase", margin: "0 0 16px" }}>
-        {title}
-      </p>
-      <p style={{ fontSize: 42, fontWeight: 700, color: highlight ? "#C9A84C" : "#F5F0E8", margin: 0, fontFamily: "Georgia, serif" }}>
-        {value}
-      </p>
+    <div className="border-r border-[#2A2318] px-8 py-12 text-center">
+      <p className="text-sm uppercase tracking-[0.25em] font-bold">{title}</p>
+      <p className="mt-5 text-[#CFC6AD] leading-relaxed">{children}</p>
     </div>
   );
 }
 
-function CertCard({ title, index }: { title: string; index: string }) {
+function Portal({ href, title, text }: { href: string; title: string; text: string }) {
   return (
-    <div
-      style={{
-        background: "#080808",
-        padding: "36px 32px",
-        display: "flex",
-        alignItems: "flex-end",
-        justifyContent: "space-between",
-        minHeight: 120,
-      }}
+    <Link
+      href={href}
+      className="group border border-[#2A2318] p-8 flex items-center justify-between hover:border-[#C9A84C] transition"
     >
-      <h3 style={{ fontSize: 17, fontWeight: 400, color: "#BDB49A", margin: 0 }}>{title}</h3>
-      <span style={{ fontSize: 10, color: "#2A2318", fontFamily: "system-ui, sans-serif", letterSpacing: "0.2em" }}>{index}</span>
-    </div>
+      <div>
+        <p className="text-lg uppercase tracking-[0.2em] font-bold">{title}</p>
+        <p className="mt-4 text-[#CFC6AD] leading-relaxed">{text}</p>
+      </div>
+      <span className="text-3xl text-[#C9A84C] group-hover:translate-x-2 transition">
+        →
+      </span>
+    </Link>
   );
 }
-
-function EcoCard({ title, desc }: { title: string; desc: string }) {
-  return (
-    <div style={{ background: "#080808", padding: "40px 32px" }}>
-      <div style={{ width: 24, height: 1, background: "#C9A84C", marginBottom: 24 }} />
-      <h3 style={{ fontSize: 19, fontWeight: 400, color: "#F5F0E8", margin: "0 0 16px" }}>{title}</h3>
-      <p style={{ fontSize: 14, lineHeight: 1.6, color: "#A89878", fontFamily: "system-ui, sans-serif", margin: 0 }}>{desc}</p>
-    </div>
-  );
-}
-
-/* ── SHARED STYLES ───────────────────────────────────────────────────────── */
-
-const eyebrow: React.CSSProperties = {
-  fontSize: 10,
-  letterSpacing: "0.6em",
-  color: "#C9A84C",
-  fontFamily: "system-ui, sans-serif",
-  textTransform: "uppercase",
-  margin: 0,
-};
-
-const btnPrimary: React.CSSProperties = {
-  display: "inline-block",
-  background: "#C9A84C",
-  color: "#080808",
-  padding: "14px 36px",
-  fontFamily: "system-ui, sans-serif",
-  fontSize: 13,
-  fontWeight: 700,
-  letterSpacing: "0.12em",
-  textTransform: "uppercase",
-  textDecoration: "none",
-};
-
-const btnSecondary: React.CSSProperties = {
-  display: "inline-block",
-  background: "transparent",
-  color: "#C9A84C",
-  padding: "14px 36px",
-  fontFamily: "system-ui, sans-serif",
-  fontSize: 13,
-  fontWeight: 600,
-  letterSpacing: "0.12em",
-  textTransform: "uppercase",
-  textDecoration: "none",
-  border: "1px solid #5A4A28",
-};
