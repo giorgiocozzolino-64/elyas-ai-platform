@@ -81,12 +81,20 @@ export default async function CertificatePage({ params }: CertificatePageProps) 
         <div className="relative z-10">
           <header className="grid grid-cols-[115px_1fr_115px] items-start gap-3 border-b border-[#2A2318] pb-3">
             <div className="text-center">
-              <div className="rounded-lg border border-[#2A2318] bg-[#E8DEC8] p-2">
-                <img
-                  src="/elyas-logo.png"
-                  alt="E.L.Y.A.S-A.I."
-                  className="mx-auto h-18 w-18 object-contain"
-                />
+              <div className="flex h-18 w-18 flex-col items-center justify-center gap-[2px] rounded-lg border border-[#2A2318] bg-[#E8DEC8] p-1">
+                <p className="flex items-center gap-[2px] whitespace-nowrap font-serif text-[6px] font-bold leading-none text-[#0F0F0F]">
+                  <span className="text-[#A8842E]">•((•</span>
+                  E.L.Y.A.S-A.I.
+                  <span className="text-[#A8842E]">•))•</span>
+                </p>
+                <div className="flex w-[80%] items-center gap-[2px]">
+                  <span className="h-px flex-1 bg-[#A8842E]" />
+                  <span className="h-[2px] w-[2px] rotate-45 bg-[#A8842E]" />
+                  <span className="h-px flex-1 bg-[#A8842E]" />
+                </div>
+                <p className="px-[2px] text-center text-[4px] leading-[1.3] text-[#3A3020]">
+                  Enhanced Living Systems through Acoustic Stimulation — Artisanal Intelligence
+                </p>
               </div>
 
               <p className="mt-1 text-[7px] font-bold uppercase tracking-[0.2em] text-[#C9A84C]">
