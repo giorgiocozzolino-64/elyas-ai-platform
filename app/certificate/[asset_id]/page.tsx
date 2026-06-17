@@ -84,7 +84,7 @@ export default async function CertificatePage({ params }: CertificatePageProps) 
               <img
                 src="/elyas-logo.png"
                 alt="E.L.Y.A.S-A.I."
-                className="mx-auto h-20 w-auto object-contain"
+                className="mx-auto h-28 w-auto object-contain"
               />
 
               <p className="mt-1 text-[7px] font-bold uppercase tracking-[0.2em] text-[#C9A84C]">
@@ -105,11 +105,11 @@ export default async function CertificatePage({ params }: CertificatePageProps) 
                 Certified by E.L.Y.A.S-A.I. | Digital Certification Framework
               </p>
 
-              <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.2em] text-[#C9A84C]">
+              <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.25em] text-[#C9A84C]">
                 Certificate No.
               </p>
 
-              <p className="text-[10px] font-bold text-[#E8DEC8]">{certificateId}</p>
+              <p className="text-base font-extrabold tracking-[0.04em] text-[#E8DEC8]">{certificateId}</p>
             </div>
 
             <div className="text-center">
