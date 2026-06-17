@@ -81,18 +81,18 @@ export default async function CertificatePage({ params }: CertificatePageProps) 
         <div className="relative z-10">
           <header className="grid grid-cols-[180px_1fr_115px] items-start gap-3 border-b border-[#2A2318] pb-3">
             <div className="text-center">
-              <div className="flex h-32 w-full flex-col items-center justify-center gap-1 rounded-lg border border-[#2A2318] bg-[#E8DEC8] p-2">
-                <p className="flex items-center gap-1 whitespace-nowrap font-serif text-base font-bold leading-none text-[#0F0F0F]">
-                  <span className="text-[0.55em] text-[#A8842E]">•(((•</span>
+              <div className="flex h-32 w-full flex-col items-center justify-center gap-1.5 rounded-lg border border-[#2A2318] bg-[#E8DEC8] p-2">
+                <p className="flex items-center gap-1.5 whitespace-nowrap font-serif text-2xl font-bold leading-none text-[#0F0F0F]">
+                  <span className="text-[0.5em] text-[#A8842E]">•(((•</span>
                   E.L.Y.A.S-A.I.
-                  <span className="text-[0.55em] text-[#A8842E]">•)))•</span>
+                  <span className="text-[0.5em] text-[#A8842E]">•)))•</span>
                 </p>
-                <div className="flex w-[78%] items-center gap-1">
+                <div className="flex w-[78%] items-center gap-1.5">
                   <span className="h-px flex-1 bg-[#A8842E]" />
-                  <span className="h-1 w-1 rotate-45 bg-[#A8842E]" />
+                  <span className="h-1.5 w-1.5 rotate-45 bg-[#A8842E]" />
                   <span className="h-px flex-1 bg-[#A8842E]" />
                 </div>
-                <p className="px-1 text-center text-[7px] leading-[1.4] text-[#3A3020]">
+                <p className="px-1 text-center text-[10px] font-medium leading-[1.35] text-[#3A3020]">
                   Enhanced Living Systems through Acoustic Stimulation — Artisanal Intelligence
                 </p>
               </div>
