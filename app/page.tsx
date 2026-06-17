@@ -18,14 +18,10 @@ export default function HomePage() {
           <Link href="/verify/PG-FC26-001">Verify</Link>
           <Link href="/products">Certified Products</Link>
           <Link href="#about">About</Link>
-          <Link href="#how">How It Works</Link>
-          <Link href="#producers">For Producers</Link>
+          <Link href="#layers">Platform Layers</Link>
         </nav>
 
-        <Link
-          href="/login"
-          className="border border-[#C9A84C] px-8 py-3 text-xs uppercase tracking-[0.25em] text-[#C9A84C]"
-        >
+        <Link href="/login" className="border border-[#C9A84C] px-8 py-3 text-xs uppercase tracking-[0.25em] text-[#C9A84C]">
           Login
         </Link>
       </header>
@@ -54,8 +50,7 @@ export default function HomePage() {
           <div className="mt-9 text-3xl font-serif leading-snug">
             <p>We are not a QR code.</p>
             <p className="text-[#C9A84C]">
-              We are the digital trust layer between physical products and
-              certified identity.
+              We are the digital trust layer between physical products and certified identity.
             </p>
           </div>
 
@@ -84,7 +79,7 @@ export default function HomePage() {
                 <span className="h-px flex-1 bg-[#A8842E]" />
               </div>
 
-              <<section id="producers" className="px-10 lg:px-20 py-16"></>p className="max-w-sm text-center text-base leading-relaxed text-[#3A3020]">
+              <p className="max-w-sm text-center text-base leading-relaxed text-[#3A3020]">
                 Enhanced Living Systems through Acoustic Stimulation — Artisanal Intelligence
               </p>
             </div>
@@ -92,76 +87,55 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="producers" className="px-10 lg:px-20 py-16">
-  <div className="flex items-center gap-8">
-    <div className="h-px flex-1 bg-[#2A2318]" />
-    <p className="text-[#C9A84C] uppercase tracking-[0.5em]">
-      Platform Layers
-    </p>
-    <div className="h-px flex-1 bg-[#2A2318]" />
-  </div>
+      <section id="about" className="grid grid-cols-1 md:grid-cols-5 border-b border-[#2A2318]">
+        <Feature title="What We Do">
+          We certify identity, origin, ownership and story of premium products.
+        </Feature>
+        <Feature title="How It Works">
+          Producer → Product → Asset → Owner → Certificate → Verification.
+        </Feature>
+        <Feature title="Who It’s For">
+          Producers, luxury brands, distilleries, food companies, collectors and investors.
+        </Feature>
+        <Feature title="What We Certify">
+          Product classes and certified assets, not static showcase projects.
+        </Feature>
+        <Feature title="Built For Trust">
+          Security, transparency and digital provenance at the core of every certificate.
+        </Feature>
+      </section>
 
-  <div className="mt-10 grid gap-8 md:grid-cols-3">
-    <Portal
-      href="/verify/PG-FC26-001"
-      title="Public Area"
-      text="Verification, product discovery, certificates and public trust."
-    />
+      <section id="layers" className="px-10 lg:px-20 py-16">
+        <div className="flex items-center gap-8">
+          <div className="h-px flex-1 bg-[#2A2318]" />
+          <p className="text-[#C9A84C] uppercase tracking-[0.5em]">
+            Platform Layers
+          </p>
+          <div className="h-px flex-1 bg-[#2A2318]" />
+        </div>
 
-    <Portal
-      href="/portal"
-      title="Corporate Area"
-      text="Producer operations, product registration, assets and ownership records."
-    />
+        <div className="mt-10 grid gap-8 md:grid-cols-3">
+          <Portal
+            href="/verify/PG-FC26-001"
+            title="Public Area"
+            text="Verification, product discovery, certificates and public trust."
+          />
+          <Portal
+            href="/portal"
+            title="Corporate Area"
+            text="Producer operations, product registration, assets and ownership records."
+          />
+          <Portal
+            href="/dashboard"
+            title="Admin Area"
+            text="Platform governance, certification control and ecosystem intelligence."
+          />
+        </div>
 
-    <Portal
-      href="/dashboard"
-      title="Admin Area"
-      text="Platform governance, certification control and ecosystem intelligence."
-    />
-  </div>
-
-  <div className="mt-16 border border-[#C9A84C] p-10">
-    <p className="text-xs uppercase tracking-[0.55em] text-[#C9A84C]">
-      II · Separation of Layers
-    </p>
-
-    <div className="mt-10 grid gap-8 md:grid-cols-3">
-      <div>
-        <p className="font-serif text-3xl text-[#F5F0E8]">
-          Public Area
+        <p className="mt-14 text-center text-xs uppercase tracking-[0.55em] text-[#D5B85A]">
+          Trust · Governance · Intelligence
         </p>
-        <p className="mt-5 leading-relaxed text-[#BDB49A]">
-          Verification, product discovery, certificates and public trust.
-        </p>
-      </div>
-
-      <div>
-        <p className="font-serif text-3xl text-[#F5F0E8]">
-          Corporate Area
-        </p>
-        <p className="mt-5 leading-relaxed text-[#BDB49A]">
-          Producer operations, product registration, assets and ownership
-          records.
-        </p>
-      </div>
-
-      <div>
-        <p className="font-serif text-3xl text-[#F5F0E8]">
-          Admin Area
-        </p>
-        <p className="mt-5 leading-relaxed text-[#BDB49A]">
-          Platform governance, certification control and ecosystem
-          intelligence.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <p className="mt-14 text-center text-xs uppercase tracking-[0.55em] text-[#D5B85A]">
-    Trust · Governance · Intelligence
-  </p>
-</section>
+      </section>
     </main>
   );
 }
