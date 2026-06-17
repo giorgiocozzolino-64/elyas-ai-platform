@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#050505] text-[#F5F0E8]">
