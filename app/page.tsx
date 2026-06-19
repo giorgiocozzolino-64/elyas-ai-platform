@@ -122,29 +122,39 @@ export default function HomePage() {
         </Feature>
       </section>
 
+      <section className="px-10 lg:px-20 py-28 border-b border-[#2A2318]">
+        <div className="border border-[#C9A84C]/40 px-10 py-16 lg:px-20 lg:py-24">
+          <div className="max-w-5xl">
+            <h2 className="font-serif text-5xl lg:text-7xl leading-tight text-white">
+              Every certified product
+              <br />
+              has a story.
+            </h2>
+
+            <p className="mt-8 font-serif italic text-4xl lg:text-6xl leading-tight text-[#C9A84C]">
+              The QR code is only the key.
+              <br />
+              The story begins when the door opens.
+            </p>
+
+            <p className="mt-12 max-w-3xl text-lg leading-relaxed text-[#D8D2C8]">
+              E.L.Y.A.S-A.I. preserves, verifies and certifies the identity of
+              premium food, beverage and luxury craft products.
+            </p>
+
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#D8D2C8]">
+              Every bottle. Every cask. Every ingredient. Every journey leaves a
+              trace.
+            </p>
+
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#D8D2C8]">
+              Because value without trust is only a claim.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="layers" className="px-10 lg:px-20 py-16">
-        </section>
-
-<section className="px-10 lg:px-20 py-20 border-b border-[#2A2318]">
-  <div className="border border-[#C9A84C] py-24 px-10 lg:px-20">
-    <div className="max-w-5xl">
-      <h2 className="font-serif text-5xl lg:text-6xl leading-tight text-[#F5F0E8]">
-        India and China can produce millions of litres.
-      </h2>
-
-      <h3 className="mt-4 font-serif italic text-5xl lg:text-6xl text-[#C9A84C]">
-        We produce certified trust.
-      </h3>
-
-      <p className="mt-12 max-w-3xl text-xl text-[#CFC6AD] leading-relaxed">
-        The future challenge for Scotland is not producing more whisky.
-        It is proving why Scottish whisky remains worth more.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section id="layers" className="px-10 lg:px-20 py-16">
         <div className="flex items-center gap-8">
           <div className="h-px flex-1 bg-[#2A2318]" />
           <p className="text-[#C9A84C] uppercase tracking-[0.5em]">
