@@ -14,14 +14,19 @@ export default function HomePage() {
         </div>
 
         <nav className="hidden lg:flex gap-9 text-xs uppercase tracking-[0.28em]">
-          <Link href="/" className="text-[#C9A84C]">Home</Link>
-          <Link href="/verify/PG-FC26-001">Verify</Link>
+          <Link href="/" className="text-[#C9A84C]">
+            Home
+          </Link>
+          <Link href="/verify">Verify</Link>
           <Link href="/products">Certified Products</Link>
           <Link href="#about">About</Link>
           <Link href="#layers">Platform Layers</Link>
         </nav>
 
-        <Link href="/login" className="border border-[#C9A84C] px-8 py-3 text-xs uppercase tracking-[0.25em] text-[#C9A84C]">
+        <Link
+          href="/login"
+          className="border border-[#C9A84C] px-8 py-3 text-xs uppercase tracking-[0.25em] text-[#C9A84C]"
+        >
           Login
         </Link>
       </header>
@@ -55,7 +60,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-5">
-            <Link href="/verify/PG-FC26-001" className="gold-btn">
+            <Link href="/verify" className="gold-btn">
               Verify a Product →
             </Link>
             <Link href="/products" className="dark-btn">
@@ -116,7 +121,7 @@ export default function HomePage() {
 
         <div className="mt-10 grid gap-8 md:grid-cols-3">
           <Portal
-            href="/verify/PG-FC26-001"
+            href="/verify"
             title="Public Area"
             text="Verification, product discovery, certificates and public trust."
           />
