@@ -123,6 +123,28 @@ export default function HomePage() {
       </section>
 
       <section id="layers" className="px-10 lg:px-20 py-16">
+        </section>
+
+<section className="px-10 lg:px-20 py-20 border-b border-[#2A2318]">
+  <div className="border border-[#C9A84C] py-24 px-10 lg:px-20">
+    <div className="max-w-5xl">
+      <h2 className="font-serif text-5xl lg:text-6xl leading-tight text-[#F5F0E8]">
+        India and China can produce millions of litres.
+      </h2>
+
+      <h3 className="mt-4 font-serif italic text-5xl lg:text-6xl text-[#C9A84C]">
+        We produce certified trust.
+      </h3>
+
+      <p className="mt-12 max-w-3xl text-xl text-[#CFC6AD] leading-relaxed">
+        The future challenge for Scotland is not producing more whisky.
+        It is proving why Scottish whisky remains worth more.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="layers" className="px-10 lg:px-20 py-16">
         <div className="flex items-center gap-8">
           <div className="h-px flex-1 bg-[#2A2318]" />
           <p className="text-[#C9A84C] uppercase tracking-[0.5em]">
