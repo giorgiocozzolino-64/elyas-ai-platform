@@ -1,125 +1,199 @@
-export default function ArbroathPage() {
+import Link from "next/link";
+
+export const dynamic = "force-dynamic";
+
+const certification = [
+  { label: "Company", value: "Arbroath A.D.1320 Ltd" },
+  { label: "Role", value: "Certified Maison" },
+  { label: "Sector", value: "Luxury Whisky & Premium Spirits" },
+  { label: "Status", value: "Active" },
+  { label: "Registry", value: "E.L.Y.A.S-A.I." },
+  { label: "Verification", value: "Public record" },
+];
+
+const areas = [
+  "Single Malt Whisky",
+  "Private Casks",
+  "Luxury Bottlings",
+  "Sea Malt Projects",
+  "Digital Product Passports",
+];
+
+export default function ArbroathCertifiedCompanyPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="mx-auto max-w-7xl px-8 py-20">
-        <p className="uppercase tracking-[0.4em] text-pink-400">
-          Certified Company
-        </p>
+    <main className="min-h-screen bg-[#FAF7F0] text-[#14110A]">
+      <header className="border-b border-[#2A2318] bg-[#050505]">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5 sm:px-10">
+          <Link
+            href="/"
+            className="font-serif text-lg tracking-[0.15em] text-[#F5F0E8]"
+          >
+            E.L.Y.A.S-A.I.
+          </Link>
 
-        <h1 className="mt-6 text-6xl font-bold">Arbroath A.D.1320 Ltd</h1>
-
-        <p className="mt-3 text-sm uppercase tracking-[0.3em] text-zinc-500">
-          ELYAS-CP-0002
-        </p>
-
-        <p className="mt-6 max-w-4xl text-xl text-zinc-400">
-          Luxury whisky maison and certified maturation programme, including
-          Sea Malt and the Arbroath A.D.1320 Maison Collection.
-        </p>
-
-        <div className="mt-12 flex flex-wrap gap-4">
-          <Badge color="green" text="ACTIVE" />
-          <Badge color="pink" text="CERTIFIED COMPANY" />
-          <Badge color="blue" text="ORACLE NETSUITE CONNECTED" />
+          <Link
+            href="/companies"
+            className="text-[11px] uppercase tracking-[0.2em] text-[#BDB49A] transition hover:text-[#C9A84C]"
+          >
+            ← Certified Companies
+          </Link>
         </div>
+      </header>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-4">
-          <Metric title="Certified Products" value="2" />
-          <Metric title="Certified Assets" value="250" />
-          <Metric title="Registered Owners" value="0" />
-          <Metric title="Digital Passports" value="250" />
-        </div>
+      <section className="mx-auto max-w-5xl px-6 py-20 sm:px-10 sm:py-28">
+        <div className="grid items-center gap-14 md:grid-cols-[1fr_auto]">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#8A6B22]">
+              Certified Maison
+            </p>
 
-        <section className="mt-20">
-          <p className="uppercase tracking-[0.3em] text-pink-400">
-            Certified Products
-          </p>
+            <h1 className="mt-5 font-serif text-5xl leading-tight text-[#14110A] sm:text-6xl">
+              Arbroath A.D.1320 Ltd
+            </h1>
 
-          <h2 className="mt-4 text-4xl font-bold">Company Product Registry</h2>
+            <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-[#5C5240]">
+              Arbroath A.D.1320 Ltd is a certified maison within the
+              E.L.Y.A.S-A.I. registry for luxury whisky, limited cask projects,
+              bespoke maturation and premium spirits certification.
+            </p>
 
-          <p className="mt-4 max-w-4xl text-zinc-400">
-            Each certified product belongs to Arbroath A.D.1320 Ltd and can
-            generate its own certified assets, digital passports, ownership
-            records and lifecycle certification events.
-          </p>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <ProductCard
-              title="Sea Malt"
-              description="Underwater bottle refinement programme with digital provenance, ownership registration, NFC identity and future certified sea maturation records."
-              status="IN DEVELOPMENT"
-              metric="250 Planned Certified Bottles"
-            />
-
-            <ProductCard
-              title="Arbroath A.D.1320 Maison Collection"
-              description="Cask-to-bottle whisky traceability and luxury maison collection built around provenance, scarcity, certified maturation and verified product identity."
-              status="IN DEVELOPMENT"
-              metric="Maison Whisky Certification System"
-            />
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center gap-2 border border-[#D8CDA8] bg-white/50 px-4 py-2 text-xs uppercase tracking-[0.18em] text-[#3A3020]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#5E8A52]" />
+                Active
+              </span>
+              <span className="inline-flex items-center border border-[#C9A84C] px-4 py-2 text-xs uppercase tracking-[0.18em] text-[#3A3020]">
+                E.L.Y.A.S-A.I. Registered
+              </span>
+            </div>
           </div>
-        </section>
-      </div>
+
+          <CertificationSeal />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 sm:px-10">
+        <div className="border-t border-[#E4D9B8]">
+          {certification.map((row) => (
+            <div
+              key={row.label}
+              className="flex flex-wrap items-baseline justify-between gap-2 border-b border-[#E4D9B8] py-4"
+            >
+              <span className="text-xs uppercase tracking-[0.2em] text-[#8A7A52]">
+                {row.label}
+              </span>
+              <span className="font-serif text-base text-[#14110A]">
+                {row.value}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 py-16 sm:px-10">
+        <p className="text-xs uppercase tracking-[0.3em] text-[#8A7A52]">
+          Certified Product Areas
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          {areas.map((area) => (
+            <span
+              key={area}
+              className="border border-[#D8CDA8] px-5 py-2 text-sm text-[#3A3020]"
+            >
+              {area}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-t border-[#E4D9B8] bg-[#F1EAD9]">
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-5 px-6 py-16 text-center sm:px-10">
+          <p className="font-serif text-2xl text-[#14110A]">
+            Verify a product from Arbroath A.D.1320 Ltd
+          </p>
+          <p className="max-w-md text-sm text-[#5C5240]">
+            Every certified product carries a unique code. Enter it to view its
+            digital passport and provenance record.
+          </p>
+
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/verify"
+              className="bg-[#C9A84C] px-8 py-3 text-xs uppercase tracking-[0.2em] text-[#0F0F0F] transition hover:bg-[#B8973F]"
+            >
+              Verify Product Code →
+            </Link>
+            <Link
+              href="/companies"
+              className="border border-[#3A3020] px-8 py-3 text-xs uppercase tracking-[0.2em] text-[#3A3020] transition hover:border-[#C9A84C] hover:text-[#8A6B22]"
+            >
+              ← Back to Certified Companies
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-[#E4D9B8] bg-[#FAF7F0]">
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 px-6 py-8 text-center sm:flex-row sm:justify-between sm:text-left">
+          <span className="text-[11px] uppercase tracking-[0.25em] text-[#8A7A52]">
+            © 2026 Arbroath A.D.1320 Ltd · All Rights Reserved
+          </span>
+          <span className="text-[11px] uppercase tracking-[0.25em] text-[#8A7A52]">
+            E.L.Y.A.S-A.I.™
+          </span>
+        </div>
+      </footer>
     </main>
   );
 }
 
-function Badge({
-  color,
-  text,
-}: {
-  color: "green" | "pink" | "blue";
-  text: string;
-}) {
-  const styles = {
-    green: "bg-green-900/40 text-green-300",
-    pink: "bg-pink-900/40 text-pink-300",
-    blue: "bg-blue-900/40 text-blue-300",
-  };
-
+function CertificationSeal() {
   return (
-    <span className={`rounded-full px-4 py-2 ${styles[color]}`}>
-      {text}
-    </span>
-  );
-}
-
-function Metric({ title, value }: { title: string; value: string }) {
-  return (
-    <div className="rounded-3xl border border-pink-300/20 bg-white/5 p-6">
-      <p className="text-xs uppercase tracking-[0.3em] text-zinc-500">
-        {title}
-      </p>
-
-      <p className="mt-4 text-5xl font-bold text-pink-300">{value}</p>
-    </div>
-  );
-}
-
-function ProductCard({
-  title,
-  description,
-  status,
-  metric,
-}: {
-  title: string;
-  description: string;
-  status: string;
-  metric: string;
-}) {
-  return (
-    <div className="rounded-3xl border border-pink-300/20 bg-white/5 p-8 transition hover:border-pink-300/60 hover:bg-pink-500/10">
-      <div className="flex items-start justify-between gap-4">
-        <h3 className="text-3xl font-bold">{title}</h3>
-
-        <span className="rounded-full bg-pink-500/20 px-3 py-1 text-xs font-bold tracking-widest text-pink-300">
-          {status}
-        </span>
-      </div>
-
-      <p className="mt-4 text-zinc-400">{description}</p>
-
-      <div className="mt-6 text-pink-300">{metric}</div>
+    <div className="mx-auto h-32 w-32 sm:h-36 sm:w-36">
+      <svg viewBox="0 0 160 160" className="h-full w-full">
+        <circle
+          cx="80"
+          cy="80"
+          r="76"
+          fill="none"
+          stroke="#C9A84C"
+          strokeWidth="2"
+        />
+        <circle
+          cx="80"
+          cy="80"
+          r="64"
+          fill="none"
+          stroke="#C9A84C"
+          strokeWidth="1"
+        />
+        <text
+          x="80"
+          y="74"
+          textAnchor="middle"
+          fontFamily="Georgia, serif"
+          fontSize="28"
+          fontWeight="700"
+          fill="#14110A"
+        >
+          E·A·I
+        </text>
+        <text
+          x="80"
+          y="97"
+          textAnchor="middle"
+          fontFamily="system-ui, sans-serif"
+          fontSize="9"
+          letterSpacing="2"
+          fill="#8A6B22"
+        >
+          CERTIFIED
+        </text>
+        <circle cx="80" cy="8" r="3" fill="#C9A84C" />
+        <circle cx="80" cy="152" r="3" fill="#C9A84C" />
+        <circle cx="8" cy="80" r="3" fill="#C9A84C" />
+        <circle cx="152" cy="80" r="3" fill="#C9A84C" />
+      </svg>
     </div>
   );
 }
