@@ -1,136 +1,202 @@
-// app/companies/old-tom-gin-company/fife-negroni/page.tsx — v1.0 — 15/06/2026
-
 import Link from "next/link";
+
+export const dynamic = "force-dynamic";
+
+const productIdentity = [
+  { label: "Producer", value: "Old Tom Gin Company Ltd" },
+  { label: "Product", value: "Fife Negroni 2026" },
+  { label: "Category", value: "Cask Aged Negroni" },
+  { label: "Edition", value: "Fife Chamber 2026 Event Edition" },
+  { label: "Bottle Format", value: "100 ml Event Miniature" },
+  { label: "Registry", value: "E.L.Y.A.S-A.I." },
+  { label: "Verification", value: "Public record" },
+];
+
+const areas = [
+  "Limited Edition",
+  "Event Archive",
+  "Ownership Registry",
+  "Digital Product Passport",
+];
 
 export default function FifeNegroniProductPage() {
   return (
-    <main className="min-h-screen bg-black px-8 py-20 text-white">
-      <div className="mx-auto max-w-6xl">
-        <p className="uppercase tracking-[0.4em] text-pink-400">
-          Old Tom Gin Company Ltd
-        </p>
-
-        <h1 className="mt-6 text-6xl font-bold">Fife Negroni 2026</h1>
-
-        <p className="mt-6 max-w-3xl text-xl leading-relaxed text-zinc-400">
-          Event archive collection and ownership registry for the Fife Negroni
-          2026 limited release, connected to the E.L.Y.A.S-A.I. certification
-          framework.
-        </p>
-
-        <div className="mt-10 flex flex-wrap gap-3">
-          <Badge>Archive Collection</Badge>
-          <Badge>Limited Edition</Badge>
-          <Badge>Ownership Registry</Badge>
-          <Badge>E.L.Y.A.S-A.I. Certified</Badge>
-        </div>
-
-        <section className="mt-16 grid gap-6 md:grid-cols-4">
-          <Card title="Certified Assets" value="60" />
-          <Card title="Product Class" value="Negroni" />
-          <Card title="Status" value="Archive" />
-          <Card title="Registry" value="Active" />
-        </section>
-
-        <section className="mt-16 rounded-3xl border border-pink-300/20 bg-white/5 p-8">
-          <p className="uppercase tracking-[0.3em] text-pink-400">
-            Product Identity
-          </p>
-
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <Info label="Producer" value="Old Tom Gin Company Ltd" />
-            <Info label="Product" value="Fife Negroni 2026" />
-            <Info label="Category" value="Cask Aged Negroni" />
-            <Info label="Edition" value="Fife Chamber 2026 Event Edition" />
-            <Info label="Bottle Format" value="100 ml Event Miniature" />
-            <Info label="Certification Layer" value="E.L.Y.A.S-A.I." />
-          </div>
-        </section>
-
-        <section className="mt-16 rounded-3xl border border-pink-300/20 bg-white/5 p-8">
-          <p className="uppercase tracking-[0.3em] text-pink-400">
-            Certified Story
-          </p>
-
-          <p className="mt-6 max-w-4xl text-lg leading-relaxed text-zinc-300">
-            Fife Negroni 2026 represents an archived event collection designed
-            to demonstrate certified ownership, limited release tracking and
-            digital product identity through the E.L.Y.A.S-A.I. framework.
-          </p>
-        </section>
-
-        <section className="mt-16 rounded-3xl border border-pink-300/20 bg-white/5 p-8">
-          <p className="uppercase tracking-[0.3em] text-pink-400">
-            Registry Functions
-          </p>
-
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            <FunctionCard title="Asset Certification" />
-            <FunctionCard title="Ownership Records" />
-            <FunctionCard title="Event Archive" />
-          </div>
-        </section>
-
-        <div className="mt-16 flex flex-wrap gap-4">
+    <main className="min-h-screen bg-[#FAF7F0] text-[#14110A]">
+      <header className="border-b border-[#2A2318] bg-[#050505]">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5 sm:px-10">
           <Link
-            href="/portal/old-tom-gin-company"
-            className="inline-block rounded-2xl bg-pink-600 px-8 py-4 font-bold text-white hover:bg-pink-500"
+            href="/"
+            className="font-serif text-lg tracking-[0.15em] text-[#F5F0E8]"
           >
-            Back to Old Tom Portal
+            E.L.Y.A.S-A.I.
           </Link>
 
           <Link
-            href="/dashboard"
-            className="inline-block rounded-2xl border border-pink-400/40 px-8 py-4 font-bold text-pink-200 hover:bg-white/5"
+            href="/companies/old-tom-gin-company"
+            className="text-[11px] uppercase tracking-[0.2em] text-[#BDB49A] transition hover:text-[#C9A84C]"
           >
-            E.L.Y.A.S-A.I. Dashboard
+            ← Old Tom Gin Company
           </Link>
         </div>
-      </div>
+      </header>
+
+      <section className="mx-auto max-w-5xl px-6 py-20 sm:px-10 sm:py-28">
+        <div className="grid items-center gap-14 md:grid-cols-[1fr_auto]">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#8A6B22]">
+              Certified Product Archive
+            </p>
+
+            <h1 className="mt-5 font-serif text-5xl leading-tight text-[#14110A] sm:text-6xl">
+              Fife Negroni 2026
+            </h1>
+
+            <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-[#5C5240]">
+              Fife Negroni 2026 is a certified event archive collection within
+              the E.L.Y.A.S-A.I. registry, created for limited release tracking,
+              ownership records and public product verification.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center gap-2 border border-[#D8CDA8] bg-white/50 px-4 py-2 text-xs uppercase tracking-[0.18em] text-[#3A3020]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#5E8A52]" />
+                Archive
+              </span>
+              <span className="inline-flex items-center border border-[#C9A84C] px-4 py-2 text-xs uppercase tracking-[0.18em] text-[#3A3020]">
+                E.L.Y.A.S-A.I. Certified
+              </span>
+            </div>
+          </div>
+
+          <CertificationSeal />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 sm:px-10">
+        <div className="border-t border-[#E4D9B8]">
+          {productIdentity.map((row) => (
+            <div
+              key={row.label}
+              className="flex flex-wrap items-baseline justify-between gap-2 border-b border-[#E4D9B8] py-4"
+            >
+              <span className="text-xs uppercase tracking-[0.2em] text-[#8A7A52]">
+                {row.label}
+              </span>
+              <span className="font-serif text-base text-[#14110A]">
+                {row.value}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 py-16 sm:px-10">
+        <p className="text-xs uppercase tracking-[0.3em] text-[#8A7A52]">
+          Product Registry Areas
+        </p>
+
+        <div className="mt-6 flex flex-wrap gap-3">
+          {areas.map((area) => (
+            <span
+              key={area}
+              className="border border-[#D8CDA8] px-5 py-2 text-sm text-[#3A3020]"
+            >
+              {area}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-t border-[#E4D9B8] bg-[#F1EAD9]">
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-5 px-6 py-16 text-center sm:px-10">
+          <p className="font-serif text-2xl text-[#14110A]">
+            Verify a Fife Negroni 2026 bottle
+          </p>
+
+          <p className="max-w-md text-sm text-[#5C5240]">
+            Every certified bottle carries a unique code. Enter it to view its
+            digital passport and public certificate.
+          </p>
+
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/verify"
+              className="bg-[#C9A84C] px-8 py-3 text-xs uppercase tracking-[0.2em] text-[#0F0F0F] transition hover:bg-[#B8973F]"
+            >
+              Verify Product Code →
+            </Link>
+
+            <Link
+              href="/companies/old-tom-gin-company"
+              className="border border-[#3A3020] px-8 py-3 text-xs uppercase tracking-[0.2em] text-[#3A3020] transition hover:border-[#C9A84C] hover:text-[#8A6B22]"
+            >
+              ← Back to Old Tom Gin Company
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-[#E4D9B8] bg-[#FAF7F0]">
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 px-6 py-8 text-center sm:flex-row sm:justify-between sm:text-left">
+          <span className="text-[11px] uppercase tracking-[0.25em] text-[#8A7A52]">
+            © 2026 Old Tom Gin Company Ltd · All Rights Reserved
+          </span>
+          <span className="text-[11px] uppercase tracking-[0.25em] text-[#8A7A52]">
+            E.L.Y.A.S-A.I.™
+          </span>
+        </div>
+      </footer>
     </main>
   );
 }
 
-function Badge({ children }: { children: React.ReactNode }) {
+function CertificationSeal() {
   return (
-    <span className="rounded-full border border-pink-400/30 bg-pink-500/10 px-4 py-2 text-sm font-semibold text-pink-200">
-      {children}
-    </span>
-  );
-}
-
-function Card({ title, value }: { title: string; value: string }) {
-  return (
-    <div className="rounded-3xl border border-pink-300/20 bg-white/5 p-8">
-      <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
-        {title}
-      </p>
-
-      <p className="mt-4 text-3xl font-bold text-pink-300">{value}</p>
-    </div>
-  );
-}
-
-function Info({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <p className="text-xs uppercase tracking-[0.25em] text-zinc-500">
-        {label}
-      </p>
-
-      <p className="mt-2 text-lg font-semibold">{value}</p>
-    </div>
-  );
-}
-
-function FunctionCard({ title }: { title: string }) {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-black/30 p-6">
-      <h3 className="text-xl font-bold">{title}</h3>
-
-      <p className="mt-4 text-sm text-zinc-400">
-        Registered inside the E.L.Y.A.S-A.I. certification framework.
-      </p>
+    <div className="mx-auto h-32 w-32 sm:h-36 sm:w-36">
+      <svg viewBox="0 0 160 160" className="h-full w-full">
+        <circle
+          cx="80"
+          cy="80"
+          r="76"
+          fill="none"
+          stroke="#C9A84C"
+          strokeWidth="2"
+        />
+        <circle
+          cx="80"
+          cy="80"
+          r="64"
+          fill="none"
+          stroke="#C9A84C"
+          strokeWidth="1"
+        />
+        <text
+          x="80"
+          y="74"
+          textAnchor="middle"
+          fontFamily="Georgia, serif"
+          fontSize="28"
+          fontWeight="700"
+          fill="#14110A"
+        >
+          E·A·I
+        </text>
+        <text
+          x="80"
+          y="97"
+          textAnchor="middle"
+          fontFamily="system-ui, sans-serif"
+          fontSize="9"
+          letterSpacing="2"
+          fill="#8A6B22"
+        >
+          CERTIFIED
+        </text>
+        <circle cx="80" cy="8" r="3" fill="#C9A84C" />
+        <circle cx="80" cy="152" r="3" fill="#C9A84C" />
+        <circle cx="8" cy="80" r="3" fill="#C9A84C" />
+        <circle cx="152" cy="80" r="3" fill="#C9A84C" />
+      </svg>
     </div>
   );
 }
