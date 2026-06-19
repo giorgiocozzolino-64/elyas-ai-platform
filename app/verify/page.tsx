@@ -1,6 +1,21 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function VerifyPage() {
+  const router = useRouter();
+  const [assetId, setAssetId] = useState("");
+
+  function handleVerify() {
+    const cleanAssetId = assetId.trim();
+
+    if (!cleanAssetId) return;
+
+    router.push(`/verify/${encodeURIComponent(cleanAssetId)}`);
+  }
+
   return (
     <main className="min-h-screen bg-[#050505] text-[#F5F0E8]">
       <header className="border-b border-[#2A2318] px-10 py-5 flex items-center justify-between">
@@ -31,8 +46,8 @@ export default function VerifyPage() {
         </h1>
 
         <p className="mt-10 max-w-3xl text-xl text-[#CFC6AD] leading-relaxed">
-          Enter a Certificate ID, Asset ID, QR Code ID or Product Code
-          to verify authenticity, ownership and certification status.
+          Enter a Certificate ID, Asset ID, QR Code ID or Product Code to verify
+          authenticity, ownership and certification status.
         </p>
 
         <div className="mt-16 border border-[#C9A84C] p-10 bg-[#0B0B0B]">
@@ -42,11 +57,22 @@ export default function VerifyPage() {
 
           <input
             type="text"
+            value={assetId}
+            onChange={(event) => setAssetId(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                handleVerify();
+              }
+            }}
             placeholder="Example: PG-FC26-001"
-            className="mt-4 w-full bg-black border border-[#2A2318] px-6 py-5 text-lg"
+            className="mt-4 w-full bg-black border border-[#2A2318] px-6 py-5 text-lg text-[#F5F0E8] outline-none focus:border-[#C9A84C]"
           />
 
-          <button className="mt-6 border border-[#C9A84C] px-10 py-4 text-[#C9A84C] uppercase tracking-[0.25em]">
+          <button
+            type="button"
+            onClick={handleVerify}
+            className="mt-6 border border-[#C9A84C] px-10 py-4 text-[#C9A84C] uppercase tracking-[0.25em] hover:bg-[#C9A84C] hover:text-black transition"
+          >
             Verify
           </button>
         </div>
@@ -72,13 +98,7 @@ export default function VerifyPage() {
   );
 }
 
-function InfoCard({
-  title,
-  text,
-}: {
-  title: string;
-  text: string;
-}) {
+function InfoCard({ title, text }: { title: string; text: string }) {
   return (
     <div className="border border-[#2A2318] p-8">
       <h2 className="font-serif text-3xl">{title}</h2>
