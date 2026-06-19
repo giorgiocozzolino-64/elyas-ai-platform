@@ -1,125 +1,69 @@
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default function CorporatePortalPage() {
   return (
     <main className="min-h-screen bg-[#050505] text-[#F5F0E8]">
-      <header className="border-b border-[#2A2318] px-10 py-5 flex items-center justify-between">
-        <div>
-          <p className="text-3xl font-serif tracking-widest">E.L.Y.A.S-A.I.</p>
-          <p className="text-xs tracking-[0.35em] text-[#C9A84C] uppercase">
-            Corporate Certification Portal
-          </p>
-        </div>
-
-        <nav className="hidden lg:flex gap-8 text-xs uppercase tracking-[0.25em]">
-          <Link href="/">Public Home</Link>
-          <Link href="/products">Public Registry</Link>
-          <Link href="/dashboard">Admin Dashboard</Link>
-        </nav>
+      <header className="border-b border-[#2A2318] px-8 py-5 lg:px-12 flex items-center justify-between">
+        <Link href="/" className="font-serif text-2xl tracking-widest">
+          E.L.Y.A.S-A.I.
+        </Link>
 
         <Link
-          href="/login"
-          className="border border-[#C9A84C] px-8 py-3 text-xs uppercase tracking-[0.25em] text-[#C9A84C]"
+          href="/"
+          className="text-xs uppercase tracking-[0.25em] text-[#BDB49A] transition hover:text-[#C9A84C]"
         >
-          Secure Login
+          Public Home
         </Link>
       </header>
 
-      <section className="px-10 lg:px-20 py-20 border-b border-[#2A2318]">
-        <p className="text-xs uppercase tracking-[0.55em] text-[#C9A84C]">
-          I · Corporate Layer
-        </p>
+      <section className="flex min-h-[calc(100vh-73px)] items-center justify-center px-8 py-20">
+        <div className="w-full max-w-3xl border border-[#C9A84C]/35 bg-[#0B0B0B] px-8 py-14 text-center lg:px-16 lg:py-20">
+          <p className="text-xs uppercase tracking-[0.55em] text-[#C9A84C]">
+            Corporate Access
+          </p>
 
-        <h1 className="mt-8 font-serif text-6xl lg:text-8xl leading-none">
-          Producer
-          <br />
-          <span className="text-[#C9A84C]">Certification Portal</span>
-        </h1>
+          <h1 className="mt-8 font-serif text-5xl leading-tight lg:text-7xl">
+            Producer
+            <br />
+            Certification Portal
+          </h1>
 
-        <p className="mt-10 max-w-3xl font-serif text-2xl leading-relaxed text-[#E8DDBE]">
-          Manage certified companies, product classes, digital assets, ownership
-          records and certificate operations from one institutional control layer.
-        </p>
-      </section>
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-[#CFC6AD]">
+            This area is reserved for certified producers, partners and
+            authorised corporate users.
+          </p>
 
-      <section className="grid grid-cols-1 md:grid-cols-3">
-        <PortalCard
-          href="/companies"
-          title="Companies Registry"
-          index="01"
-          text="Manage certified producers, company profiles, certification status and onboarding records."
-        />
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-[#8E835F]">
+            Access is required to manage product records, digital assets,
+            ownership data, certification operations and producer-level
+            verification workflows.
+          </p>
 
-        <PortalCard
-          href="/products"
-          title="Product Registry"
-          index="02"
-          text="Manage certified product classes, public product pages and certification metadata."
-        />
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/login"
+              className="bg-[#C9A84C] px-8 py-3 text-xs uppercase tracking-[0.25em] text-[#0F0F0F] transition hover:bg-[#B8973F]"
+            >
+              Secure Login →
+            </Link>
 
-        <PortalCard
-          href="/portal/assets"
-          title="Asset Registry"
-          index="03"
-          text="Control bottle, cask, batch, ingredient and unit-level certified digital assets."
-        />
+            <Link
+              href="/companies"
+              className="border border-[#C9A84C]/60 px-8 py-3 text-xs uppercase tracking-[0.25em] text-[#C9A84C] transition hover:bg-[#C9A84C] hover:text-[#0F0F0F]"
+            >
+              Public Registry
+            </Link>
+          </div>
 
-        <PortalCard
-          href="/owners"
-          title="Owner Registry"
-          index="04"
-          text="View ownership records, claims, transfers and verified owner profiles."
-        />
-
-        <PortalCard
-          href="/portal/certificates"
-          title="Certificate Centre"
-          index="05"
-          text="Generate, verify and manage certificates linked to product and asset identities."
-        />
-
-        <PortalCard
-          href="/portal/analytics"
-          title="Scan Analytics"
-          index="06"
-          text="Analyse QR/NFC scans, geographic reach, engagement and verification behaviour."
-        />
+          <div className="mt-12 border-t border-[#2A2318] pt-8">
+            <p className="text-[11px] uppercase tracking-[0.3em] text-[#6F664D]">
+              Authorised users only · E.L.Y.A.S-A.I. Corporate Layer
+            </p>
+          </div>
+        </div>
       </section>
     </main>
-  );
-}
-
-function PortalCard({
-  href,
-  title,
-  index,
-  text,
-}: {
-  href: string;
-  title: string;
-  index: string;
-  text: string;
-}) {
-  return (
-    <Link
-      href={href}
-      className="group min-h-[260px] border-r border-b border-[#2A2318] p-10 hover:bg-[#0D0B07] transition"
-    >
-      <p className="text-[#C9A84C] tracking-[0.35em] text-xs">
-        {index}
-      </p>
-
-      <h2 className="mt-8 font-serif text-3xl text-[#F5F0E8]">
-        {title}
-      </h2>
-
-      <p className="mt-6 leading-relaxed text-[#BDB49A]">
-        {text}
-      </p>
-
-      <p className="mt-8 text-[#C9A84C]">
-        Open →
-      </p>
-    </Link>
   );
 }
