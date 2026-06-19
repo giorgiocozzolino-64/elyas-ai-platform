@@ -18,7 +18,7 @@ export default function HomePage() {
             Home
           </Link>
           <Link href="/verify">Verify</Link>
-          <Link href="/products">Certified Products</Link>
+          <Link href="/companies">Certified Companies</Link>
           <Link href="#about">About</Link>
           <Link href="#layers">Platform Layers</Link>
         </nav>
@@ -55,7 +55,8 @@ export default function HomePage() {
           <div className="mt-9 text-3xl font-serif leading-snug">
             <p>We are not a QR code.</p>
             <p className="text-[#C9A84C]">
-              We are the digital trust layer between physical products and certified identity.
+              We are the digital trust layer between physical products and
+              certified identity.
             </p>
           </div>
 
@@ -63,8 +64,9 @@ export default function HomePage() {
             <Link href="/verify" className="gold-btn">
               Verify a Product →
             </Link>
-            <Link href="/products" className="dark-btn">
-              Certified Products →
+
+            <Link href="/companies" className="dark-btn">
+              Certified Companies →
             </Link>
           </div>
         </div>
@@ -85,28 +87,38 @@ export default function HomePage() {
               </div>
 
               <p className="max-w-sm text-center text-base leading-relaxed text-[#3A3020]">
-                Enhanced Living Systems through Acoustic Stimulation — Artisanal Intelligence
+                Enhanced Living Systems through Acoustic Stimulation —
+                Artisanal Intelligence
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="about" className="grid grid-cols-1 md:grid-cols-5 border-b border-[#2A2318]">
+      <section
+        id="about"
+        className="grid grid-cols-1 md:grid-cols-5 border-b border-[#2A2318]"
+      >
         <Feature title="What We Do">
           We certify identity, origin, ownership and story of premium products.
         </Feature>
+
         <Feature title="How It Works">
           Producer → Product → Asset → Owner → Certificate → Verification.
         </Feature>
+
         <Feature title="Who It’s For">
-          Producers, luxury brands, distilleries, food companies, collectors and investors.
+          Producers, luxury brands, distilleries, food companies, collectors and
+          investors.
         </Feature>
+
         <Feature title="What We Certify">
           Product classes and certified assets, not static showcase projects.
         </Feature>
+
         <Feature title="Built For Trust">
-          Security, transparency and digital provenance at the core of every certificate.
+          Security, transparency and digital provenance at the core of every
+          certificate.
         </Feature>
       </section>
 
@@ -121,15 +133,17 @@ export default function HomePage() {
 
         <div className="mt-10 grid gap-8 md:grid-cols-3">
           <Portal
-            href="/verify"
+            href="/companies"
             title="Public Area"
-            text="Verification, product discovery, certificates and public trust."
+            text="Certified companies, verification, certificates and public trust."
           />
+
           <Portal
             href="/portal"
             title="Corporate Area"
             text="Producer operations, product registration, assets and ownership records."
           />
+
           <Portal
             href="/dashboard"
             title="Admin Area"
@@ -145,7 +159,13 @@ export default function HomePage() {
   );
 }
 
-function Feature({ title, children }: { title: string; children: React.ReactNode }) {
+function Feature({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="border-r border-[#2A2318] px-8 py-12 text-center">
       <p className="text-sm uppercase tracking-[0.25em] font-bold">{title}</p>
@@ -154,7 +174,15 @@ function Feature({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
-function Portal({ href, title, text }: { href: string; title: string; text: string }) {
+function Portal({
+  href,
+  title,
+  text,
+}: {
+  href: string;
+  title: string;
+  text: string;
+}) {
   return (
     <Link
       href={href}
@@ -164,6 +192,7 @@ function Portal({ href, title, text }: { href: string; title: string; text: stri
         <p className="text-lg uppercase tracking-[0.2em] font-bold">{title}</p>
         <p className="mt-4 text-[#CFC6AD] leading-relaxed">{text}</p>
       </div>
+
       <span className="text-3xl text-[#C9A84C] group-hover:translate-x-2 transition">
         →
       </span>
