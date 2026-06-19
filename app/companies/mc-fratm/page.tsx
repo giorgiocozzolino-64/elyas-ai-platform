@@ -22,7 +22,6 @@ const areas = [
 export default function McFratmCertifiedCompanyPage() {
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#14110A]">
-      {/* ── Header ─────────────────────────────────────────── */}
       <header className="border-b border-[#2A2318] bg-[#050505]">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5 sm:px-10">
           <Link
@@ -32,24 +31,15 @@ export default function McFratmCertifiedCompanyPage() {
             E.L.Y.A.S-A.I.
           </Link>
 
-          <nav className="flex items-center gap-4 text-[11px] uppercase tracking-[0.2em] sm:gap-7">
-            <Link
-              href="/companies"
-              className="text-[#BDB49A] transition hover:text-[#C9A84C]"
-            >
-              ← Certified Companies
-            </Link>
-            <Link
-              href="/verify"
-              className="border border-[#C9A84C] px-4 py-2 text-[#C9A84C] transition hover:bg-[#C9A84C] hover:text-[#0F0F0F]"
-            >
-              Verify Product
-            </Link>
-          </nav>
+          <Link
+            href="/companies"
+            className="text-[11px] uppercase tracking-[0.2em] text-[#BDB49A] transition hover:text-[#C9A84C]"
+          >
+            ← Certified Companies
+          </Link>
         </div>
       </header>
 
-      {/* ── Hero ───────────────────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-6 py-20 sm:px-10 sm:py-28">
         <div className="grid items-center gap-14 md:grid-cols-[1fr_auto]">
           <div>
@@ -82,7 +72,6 @@ export default function McFratmCertifiedCompanyPage() {
         </div>
       </section>
 
-      {/* ── Certification panel ────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-6 sm:px-10">
         <div className="border-t border-[#E4D9B8]">
           {certification.map((row) => (
@@ -101,7 +90,6 @@ export default function McFratmCertifiedCompanyPage() {
         </div>
       </section>
 
-      {/* ── Certified product areas ────────────────────────── */}
       <section className="mx-auto max-w-5xl px-6 py-16 sm:px-10">
         <p className="text-xs uppercase tracking-[0.3em] text-[#8A7A52]">
           Certified Product Areas
@@ -118,15 +106,14 @@ export default function McFratmCertifiedCompanyPage() {
         </div>
       </section>
 
-      {/* ── CTA ─────────────────────────────────────────────── */}
       <section className="border-t border-[#E4D9B8] bg-[#F1EAD9]">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-5 px-6 py-16 text-center sm:px-10">
           <p className="font-serif text-2xl text-[#14110A]">
             Verify a product from Mc Fratm Ltd
           </p>
           <p className="max-w-md text-sm text-[#5C5240]">
-            Every certified product carries a unique code. Enter it to view
-            its digital passport and provenance record.
+            Every certified product carries a unique code. Enter it to view its
+            digital passport and provenance record.
           </p>
 
           <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
@@ -146,7 +133,6 @@ export default function McFratmCertifiedCompanyPage() {
         </div>
       </section>
 
-      {/* ── Footer ──────────────────────────────────────────── */}
       <footer className="border-t border-[#E4D9B8] bg-[#FAF7F0]">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 px-6 py-8 text-center sm:flex-row sm:justify-between sm:text-left">
           <span className="text-[11px] uppercase tracking-[0.25em] text-[#8A7A52]">
@@ -165,8 +151,22 @@ function CertificationSeal() {
   return (
     <div className="mx-auto h-32 w-32 sm:h-36 sm:w-36">
       <svg viewBox="0 0 160 160" className="h-full w-full">
-        <circle cx="80" cy="80" r="76" fill="none" stroke="#C9A84C" strokeWidth="2" />
-        <circle cx="80" cy="80" r="64" fill="none" stroke="#C9A84C" strokeWidth="1" />
+        <circle
+          cx="80"
+          cy="80"
+          r="76"
+          fill="none"
+          stroke="#C9A84C"
+          strokeWidth="2"
+        />
+        <circle
+          cx="80"
+          cy="80"
+          r="64"
+          fill="none"
+          stroke="#C9A84C"
+          strokeWidth="1"
+        />
         <text
           x="80"
           y="74"
