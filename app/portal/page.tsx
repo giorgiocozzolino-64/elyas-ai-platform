@@ -15,19 +15,12 @@ export default function CorporatePortalPage() {
       />
 
       <header className="relative z-10 flex items-center justify-between border-b border-[#2A2318] px-8 py-5 lg:px-16">
-        <Link href="/" className="group flex items-center gap-4">
-          <span className="relative flex h-9 w-9 items-center justify-center">
-            <span className="absolute inset-0 rotate-45 border border-[#C9A84C]/70 transition group-hover:border-[#C9A84C]" />
-            <span className="absolute inset-[3px] rotate-45 border border-[#C9A84C]/25" />
-            <span className="relative font-serif text-sm text-[#C9A84C]">EA</span>
+        <Link href="/" className="flex flex-col leading-none">
+          <span className="font-serif text-2xl tracking-[0.12em]">
+            E.L.Y.A.S-A.I.
           </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-serif text-2xl tracking-[0.12em]">
-              E.L.Y.A.S-A.I.
-            </span>
-            <span className="mt-1.5 text-[9px] uppercase tracking-[0.38em] text-[#8E835F]">
-              Digital Certification Authority
-            </span>
+          <span className="mt-1.5 text-[10px] uppercase tracking-[0.35em] text-[#C9A84C]">
+            Certified Product Intelligence
           </span>
         </Link>
 
