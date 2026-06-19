@@ -14,9 +14,21 @@ export default function CorporatePortalPage() {
         }}
       />
 
-      <header className="relative z-10 flex items-center justify-between border-b border-[#2A2318] px-8 py-6 lg:px-16">
-        <Link href="/" className="font-serif text-2xl tracking-widest">
-          E.L.Y.A.S-A.I.
+      <header className="relative z-10 flex items-center justify-between border-b border-[#2A2318] px-8 py-5 lg:px-16">
+        <Link href="/" className="group flex items-center gap-4">
+          <span className="relative flex h-9 w-9 items-center justify-center">
+            <span className="absolute inset-0 rotate-45 border border-[#C9A84C]/70 transition group-hover:border-[#C9A84C]" />
+            <span className="absolute inset-[3px] rotate-45 border border-[#C9A84C]/25" />
+            <span className="relative font-serif text-sm text-[#C9A84C]">EA</span>
+          </span>
+          <span className="flex flex-col leading-none">
+            <span className="font-serif text-2xl tracking-[0.12em]">
+              E.L.Y.A.S-A.I.
+            </span>
+            <span className="mt-1.5 text-[9px] uppercase tracking-[0.38em] text-[#8E835F]">
+              Digital Certification Authority
+            </span>
+          </span>
         </Link>
 
         <Link
@@ -96,108 +108,70 @@ export default function CorporatePortalPage() {
                   }}
                 />
 
-                <div className="relative" style={{ filter: "drop-shadow(0 0 28px rgba(201,168,76,0.18))" }}>
+                <div
+                  className="relative"
+                  style={{ filter: "drop-shadow(0 0 32px rgba(201,168,76,0.16))" }}
+                >
+                  {/* faint guilloché backdrop rings for a security-document feel */}
                   <svg
                     viewBox="0 0 420 420"
-                    className="h-56 w-56 lg:h-72 lg:w-72 xl:h-80 xl:w-80"
+                    className="pointer-events-none absolute inset-0 h-56 w-56 opacity-40 lg:h-72 lg:w-72 xl:h-80 xl:w-80"
+                  >
+                    <circle cx="210" cy="210" r="205" fill="none" stroke="#C9A84C" strokeOpacity="0.12" strokeWidth="1" />
+                    <circle cx="210" cy="210" r="180" fill="none" stroke="#C9A84C" strokeOpacity="0.08" strokeWidth="1" />
+                  </svg>
+
+                  <svg
+                    viewBox="0 0 420 420"
+                    className="relative h-56 w-56 lg:h-72 lg:w-72 xl:h-80 xl:w-80"
                   >
                     <defs>
-                      <path
-                        id="sealOuterPath"
-                        d="M 210,210 m -160,0 a 160,160 0 1,1 320,0 a 160,160 0 1,1 -320,0"
-                      />
-                      <path
-                        id="sealInnerPath"
-                        d="M 210,210 m -128,0 a 128,128 0 1,0 256,0 a 128,128 0 1,0 -256,0"
-                      />
+                      {/* arc spans only the upper hemisphere — text can never render upside down */}
+                      <path id="sealTextPath" d="M 52.43,182.22 A 160,160 0 0,1 367.57,182.22" />
                     </defs>
 
-                    {/* outer ring */}
-                    <circle
-                      cx="210"
-                      cy="210"
-                      r="195"
-                      fill="none"
-                      stroke="#C9A84C"
-                      strokeOpacity="0.55"
-                      strokeWidth="1.5"
-                    />
-                    {/* inner ring */}
-                    <circle
-                      cx="210"
-                      cy="210"
-                      r="160"
-                      fill="none"
-                      stroke="#C9A84C"
-                      strokeOpacity="0.85"
-                      strokeWidth="2"
-                    />
-                    <circle
-                      cx="210"
-                      cy="210"
-                      r="128"
-                      fill="none"
-                      stroke="#C9A84C"
-                      strokeOpacity="0.4"
-                      strokeWidth="1"
-                    />
+                    {/* hairline outer ring */}
+                    <circle cx="210" cy="210" r="195" fill="none" stroke="#C9A84C" strokeOpacity="0.4" strokeWidth="1" />
+                    {/* text-band rings */}
+                    <circle cx="210" cy="210" r="172" fill="none" stroke="#C9A84C" strokeOpacity="0.3" strokeWidth="1" />
+                    <circle cx="210" cy="210" r="148" fill="none" stroke="#C9A84C" strokeOpacity="0.3" strokeWidth="1" />
+                    {/* inner ring framing the monogram */}
+                    <circle cx="210" cy="210" r="118" fill="none" stroke="#C9A84C" strokeOpacity="0.55" strokeWidth="1.25" />
 
-                    {/* rotating label, outer band */}
-                    <text fill="#C9A84C" fontSize="11.5" letterSpacing="3.5">
-                      <textPath href="#sealOuterPath" startOffset="0%">
-                        E.L.Y.A.S-A.I. · DIGITAL CERTIFICATION AUTHORITY · E.L.Y.A.S-A.I. · DIGITAL CERTIFICATION AUTHORITY ·
+                    {/* single upright text band, upper hemisphere only */}
+                    <text fill="#C9A84C" fontSize="12.5" letterSpacing="3.2">
+                      <textPath href="#sealTextPath" startOffset="50%" textAnchor="middle">
+                        E.L.Y.A.S-A.I. · CERTIFICATION AUTHORITY
                       </textPath>
                     </text>
 
-                    {/* inner band */}
-                    <text fill="#9C8A56" fontSize="9.5" letterSpacing="2.5">
-                      <textPath href="#sealInnerPath" startOffset="12%">
-                        AUTHORISED ACCESS ONLY · CERTIFIED PRODUCERS &amp; PARTNERS ·
-                      </textPath>
-                    </text>
+                    {/* orientation mark, 12 o'clock */}
+                    <rect x="206" y="6" width="8" height="8" fill="#C9A84C" transform="rotate(45 210 10)" />
 
-                    {/* center monogram */}
-                    <line x1="148" y1="210" x2="272" y2="210" stroke="#C9A84C" strokeOpacity="0.35" strokeWidth="1" />
+                    {/* center lockup */}
+                    <line x1="158" y1="195" x2="262" y2="195" stroke="#C9A84C" strokeOpacity="0.4" strokeWidth="1" />
                     <text
                       x="210"
-                      y="222"
+                      y="240"
                       textAnchor="middle"
                       fill="#F5F0E8"
-                      fontSize="58"
+                      fontSize="56"
                       fontFamily="Georgia, serif"
-                      letterSpacing="4"
+                      letterSpacing="3"
                     >
                       E·A
                     </text>
+                    <line x1="158" y1="263" x2="262" y2="263" stroke="#C9A84C" strokeOpacity="0.4" strokeWidth="1" />
                     <text
                       x="210"
-                      y="250"
+                      y="286"
                       textAnchor="middle"
                       fill="#8E835F"
-                      fontSize="10"
-                      letterSpacing="3"
+                      fontSize="9.5"
+                      letterSpacing="2.6"
                     >
-                      EST. CERTIFICATION
+                      AUTHORISED ACCESS ONLY
                     </text>
-
-                    {/* small corner diamonds at cardinal points */}
-                    {[0, 90, 180, 270].map((deg) => {
-                      const r = 195;
-                      const rad = (deg * Math.PI) / 180;
-                      const x = 210 + r * Math.sin(rad);
-                      const y = 210 - r * Math.cos(rad);
-                      return (
-                        <rect
-                          key={deg}
-                          x={x - 3}
-                          y={y - 3}
-                          width="6"
-                          height="6"
-                          fill="#C9A84C"
-                          transform={`rotate(45 ${x} ${y})`}
-                        />
-                      );
-                    })}
                   </svg>
                 </div>
 
