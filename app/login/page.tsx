@@ -5,6 +5,12 @@ import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { supabaseClient } from "@/lib/supabase/client";
 
+type UserProfile = {
+  role: string;
+  company_slug: string;
+  is_active: boolean;
+};
+
 export default function LoginPage() {
   const router = useRouter();
 
@@ -24,19 +30,53 @@ export default function LoginPage() {
 
     setIsSubmitting(true);
 
-    const { error } = await supabaseClient.auth.signInWithPassword({
-      email,
-      password,
-    });
+    const { data: loginData, error: loginError } =
+      await supabaseClient.auth.signInWithPassword({
+        email,
+        password,
+      });
 
-    if (error) {
+    if (loginError || !loginData.user) {
       setError("Invalid email or password.");
       setIsSubmitting(false);
       return;
     }
 
-    router.push("/dashboard");
-    router.refresh();
+    const { data: profile, error: profileError } = await supabaseClient
+      .from("user_profiles")
+      .select("role, company_slug, is_active")
+      .eq("user_id", loginData.user.id)
+      .single<UserProfile>();
+
+    if (profileError || !profile) {
+      await supabaseClient.auth.signOut();
+      setError("No authorised company profile found for this user.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!profile.is_active) {
+      await supabaseClient.auth.signOut();
+      setError("This user profile is not active.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (profile.role === "admin") {
+      router.push("/dashboard");
+      router.refresh();
+      return;
+    }
+
+    if (profile.role === "producer") {
+      router.push(`/portal/${profile.company_slug}`);
+      router.refresh();
+      return;
+    }
+
+    await supabaseClient.auth.signOut();
+    setError("This user role is not authorised.");
+    setIsSubmitting(false);
   }
 
   return (
@@ -134,12 +174,42 @@ function CertificationSeal() {
   return (
     <div className="h-64 w-64">
       <svg viewBox="0 0 160 160" className="h-full w-full">
-        <circle cx="80" cy="80" r="76" fill="none" stroke="#C9A84C" strokeWidth="2" />
-        <circle cx="80" cy="80" r="64" fill="none" stroke="#C9A84C" strokeWidth="1" />
-        <text x="80" y="74" textAnchor="middle" fontFamily="Georgia, serif" fontSize="28" fontWeight="700" fill="#F5F0E8">
+        <circle
+          cx="80"
+          cy="80"
+          r="76"
+          fill="none"
+          stroke="#C9A84C"
+          strokeWidth="2"
+        />
+        <circle
+          cx="80"
+          cy="80"
+          r="64"
+          fill="none"
+          stroke="#C9A84C"
+          strokeWidth="1"
+        />
+        <text
+          x="80"
+          y="74"
+          textAnchor="middle"
+          fontFamily="Georgia, serif"
+          fontSize="28"
+          fontWeight="700"
+          fill="#F5F0E8"
+        >
           E·A·I
         </text>
-        <text x="80" y="97" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="9" letterSpacing="2" fill="#C9A84C">
+        <text
+          x="80"
+          y="97"
+          textAnchor="middle"
+          fontFamily="system-ui, sans-serif"
+          fontSize="9"
+          letterSpacing="2"
+          fill="#C9A84C"
+        >
           CERTIFIED
         </text>
       </svg>
