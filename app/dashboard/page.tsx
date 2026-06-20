@@ -1,7 +1,8 @@
 // app/dashboard/page.tsx — v2.0 PREMIUM — 16/06/2026
 
 import Link from "next/link";
-
+import { redirect } from "next/navigation";
+import { createClient } from "@/lib/supabase/server";
 export const dynamic = "force-dynamic";
 
 const integrations = [
@@ -85,7 +86,30 @@ const quickLinks = [
   { href: "/certificate/PG-FC26-001", label: "Demo Certificate" },
 ];
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    redirect("/login");
+  }
+
+  const { data: profile } = await supabase
+    .from("user_profiles")
+    .select("role, company_slug")
+    .eq("user_id", user.id)
+    .single();
+
+  if (!profile) {
+    redirect("/login");
+  }
+
+  if (profile.role !== "admin") {
+    redirect(`/portal/${profile.company_slug}`);
+  }
   return (
     <main
       style={{
